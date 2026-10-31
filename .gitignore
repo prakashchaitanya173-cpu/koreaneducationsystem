@@ -1,0 +1,4 @@
+.vscode/
+website.zip
+*.pyc
+__pycache__/

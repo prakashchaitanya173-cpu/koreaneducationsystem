@@ -1,0 +1,159 @@
+/* Modern Korean Education System Web Design System */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --kr-navy-dark: #0A192F;
+  --kr-navy: #0F2B5C;
+  --kr-navy-light: #1E3A8A;
+  --kr-red: #D82B38;
+  --kr-red-soft: #E11D48;
+  --kr-red-light: #FFE4E6;
+  --kr-blue-light: #E0E7FF;
+  --kr-slate-50: #F8FAFC;
+  --kr-slate-100: #F1F5F9;
+  --kr-slate-200: #E2E8F0;
+  --kr-slate-700: #334155;
+  --kr-slate-900: #0F172A;
+  --kr-gold: #D97706;
+  --kr-gold-soft: #FEF3C7;
+  --kr-teal: #0D9488;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  color: #1E293B;
+  background-color: #F8FAFC;
+}
+
+h1, h2, h3, h4, .font-heading {
+  font-family: 'Outfit', 'Noto Sans KR', sans-serif;
+}
+
+/* Taegeuk Banner & Gradient Bars */
+.taegeuk-bar {
+  background: linear-gradient(90deg, #D82B38 0%, #E11D48 45%, #0F2B5C 55%, #1E3A8A 100%);
+  height: 4px;
+  width: 100%;
+}
+
+.taegeuk-pill {
+  background: linear-gradient(135deg, rgba(216, 43, 56, 0.12) 0%, rgba(15, 43, 92, 0.12) 100%);
+  border: 1px solid rgba(15, 43, 92, 0.2);
+}
+
+.taegeuk-border-top {
+  position: relative;
+}
+.taegeuk-border-top::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #D82B38 0%, #1E3A8A 100%);
+}
+
+/* Glassmorphism Classes */
+.glass-nav {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  box-shadow: 0 4px 20px -2px rgba(15, 43, 92, 0.05);
+}
+
+.glass-card-navy {
+  background: linear-gradient(145deg, rgba(15, 43, 92, 0.95) 0%, rgba(10, 25, 47, 0.98) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #FFFFFF;
+}
+
+/* Card hover animation */
+.hover-lift {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease;
+}
+.hover-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 32px -8px rgba(15, 43, 92, 0.12);
+  border-color: rgba(15, 43, 92, 0.3);
+}
+
+/* Dancheong Pattern Texture */
+.dancheong-pattern {
+  background-color: #0A192F;
+  background-image: radial-gradient(rgba(225, 29, 72, 0.15) 1px, transparent 0), radial-gradient(rgba(30, 58, 138, 0.25) 1px, transparent 0);
+  background-position: 0 0, 16px 16px;
+  background-size: 32px 32px;
+}
+
+/* Timeline Custom Styles */
+.timeline-item {
+  position: relative;
+}
+.timeline-item::after {
+  content: '';
+  position: absolute;
+  top: 3.5rem;
+  bottom: 0;
+  left: 1.5rem;
+  width: 2px;
+  background: #E2E8F0;
+}
+.timeline-item:last-child::after {
+  display: none;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F1F5F9;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* Smooth Accordion */
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease-out, padding 0.3s ease;
+}
+.accordion-open .accordion-content {
+  max-height: 500px;
+}
+
+/* Pulse Badge */
+@keyframes subtle-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.85; transform: scale(1.03); }
+}
+.animate-subtle-pulse {
+  animation: subtle-pulse 3s infinite ease-in-out;
+}
+
+/* Modal Blur backdrop */
+.modal-backdrop {
+  background: rgba(10, 25, 47, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}

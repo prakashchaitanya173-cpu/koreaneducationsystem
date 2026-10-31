@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Korean Education System – 한국의 교육 제도 | Comprehensive Educational Guide</title>
+  <meta name="description" content="Explore South Korea's world-renowned education system: from Kindergarten to SKY Universities, Suneung (CSAT) test day, school uniforms, classroom etiquette, and a detailed comparison with Indian education.">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            krNavy: {
+              DEFAULT: '#0F2B5C',
+              dark: '#0A192F',
+              light: '#1E3A8A'
+            },
+            krRed: {
+              DEFAULT: '#D82B38',
+              soft: '#E11D48',
+              light: '#FFE4E6'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom CSS Design System -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  
+  <!-- Favicon Icon (South Korea Taegeuk Symbol SVG) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='14' fill='%23ffffff' stroke='%230f2b5c' stroke-width='2'/><path d='M16 2 A 14 14 0 0 1 16 30 A 7 7 0 0 1 16 16 A 7 7 0 0 0 16 2 Z' fill='%23d82b38'/><path d='M16 30 A 14 14 0 0 1 16 2 A 7 7 0 0 1 16 16 A 7 7 0 0 0 16 30 Z' fill='%230f2b5c'/></svg>">
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-[#D82B38] selection:text-white">
+
+  <!-- Top Korean Flag Taegeuk Bar -->
+  <div class="taegeuk-bar fixed top-0 left-0 right-0 z-50"></div>
+
+  <!-- Header / Navigation Bar -->
+  <header class="fixed top-1 left-0 right-0 z-40 glass-nav transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 md:h-20">
+        
+        <!-- Logo & Branding -->
+        <a href="#home" class="flex items-center gap-3 group">
+          <div class="w-10 h-10 rounded-full flex items-center justify-center bg-gradient-to-tr from-[#0F2B5C] via-[#1E3A8A] to-[#D82B38] text-white font-bold shadow-md shadow-blue-900/20 group-hover:scale-105 transition-transform">
+            <span class="text-sm tracking-tighter">한국</span>
+          </div>
+          <div>
+            <div class="flex items-center gap-1.5">
+              <span class="font-extrabold text-slate-900 text-base md:text-lg tracking-tight group-hover:text-[#0F2B5C] transition-colors">
+                Korean Education
+              </span>
+              <span class="text-xs px-2 py-0.5 rounded-full font-bold bg-rose-50 text-[#D82B38] border border-rose-200 hidden sm:inline-block">
+                한국의 교육 제도
+              </span>
+            </div>
+            <p class="text-[11px] text-slate-500 font-medium">South Korea Academic Portal</p>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden lg:flex items-center gap-6 text-sm font-semibold text-slate-700">
+          <a href="#home" class="hover:text-[#D82B38] transition-colors" data-en="Home" data-ko="홈">Home</a>
+          <a href="#education-structure" class="hover:text-[#D82B38] transition-colors" data-en="Structure" data-ko="학제 구조">Structure</a>
+          <a href="#school-life" class="hover:text-[#D82B38] transition-colors" data-en="School Life" data-ko="학교 생활">School Life</a>
+          <a href="#examinations" class="hover:text-[#D82B38] transition-colors" data-en="Suneung & Exams" data-ko="수능 및 입시">Suneung & Exams</a>
+          <a href="#comparison" class="hover:text-[#D82B38] transition-colors" data-en="Korea vs India" data-ko="한-인 비교">Korea vs India</a>
+          <a href="#facts" class="hover:text-[#D82B38] transition-colors" data-en="Facts" data-ko="주요 사실">Facts</a>
+          <a href="#quiz" class="hover:text-[#D82B38] transition-colors" data-en="Quiz" data-ko="퀴즈">Quiz</a>
+          <a href="#faq" class="hover:text-[#D82B38] transition-colors" data-en="FAQ" data-ko="FAQ">FAQ</a>
+          <a href="#contact" class="hover:text-[#D82B38] transition-colors" data-en="Contact" data-ko="문의">Contact</a>
+        </nav>
+
+        <!-- Search & Language Toggle & Mobile Hamburger -->
+        <div class="flex items-center gap-3">
+          
+          <!-- Live Search Input -->
+          <div class="relative hidden sm:block">
+            <div class="relative">
+              <input 
+                id="global-search-input" 
+                type="text" 
+                placeholder="Search stages, Suneung, exams..." 
+                data-en="Search stages, Suneung, exams..." 
+                data-ko="학제, 수능, 학교생활 검색..." 
+                class="w-44 md:w-56 pl-8 pr-3 py-1.5 rounded-full text-xs bg-slate-100/90 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#0F2B5C] focus:bg-white transition-all"
+              />
+              <svg class="w-3.5 h-3.5 text-slate-400 absolute left-2.5 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+            </div>
+            <!-- Search Results Dropdown -->
+            <div id="search-results-dropdown" class="hidden absolute right-0 top-10 w-72 bg-white rounded-xl shadow-2xl border border-slate-200 overflow-hidden z-50"></div>
+          </div>
+
+          <!-- Bilingual Toggle Button -->
+          <button 
+            id="lang-toggle-btn"
+            type="button" 
+            class="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold bg-slate-100 hover:bg-slate-200 border border-slate-200 text-[#0F2B5C] transition-all shadow-sm"
+            title="Toggle between English and Korean"
+          >
+            <span>🇰🇷 / 🇬🇧</span>
+            <span id="lang-label">한국어</span>
+          </button>
+
+          <!-- Mobile Menu Button -->
+          <button 
+            id="mobile-menu-btn" 
+            type="button" 
+            class="lg:hidden p-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100"
+            aria-label="Toggle navigation menu"
+          >
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div id="mobile-menu" class="hidden lg:hidden border-t border-slate-200 bg-white/95 backdrop-blur-md px-4 pt-3 pb-6 space-y-2 text-sm font-semibold text-slate-700 shadow-xl">
+      <a href="#home" class="block py-2 px-3 rounded-lg hover:bg-slate-100" data-en="Home" data-ko="홈">Home</a>
+      <a href="#education-structure" class="block py-2 px-3 rounded-lg hover:bg-slate-100" data-en="Education Structure" data-ko="학제 구조">Education Structure</a>
+      <a href="#school-life" class="block py-2 px-3 rounded-lg hover:bg-slate-100" data-en="School Life in Korea" data-ko="학교 생활">School Life in Korea</a>
+      <a href="#examinations" class="block py-2 px-3 rounded-lg hover:bg-slate-100" data-en="Suneung & Examinations" data-ko="수능 및 입시">Suneung & Examinations</a>
+      <a href="#comparison" class="block py-2 px-3 rounded-lg hover:bg-slate-100" data-en="Korean vs Indian Education" data-ko="한국 vs 인도 교육">Korean vs Indian Education</a>
+      <a href="#facts" class="block py-2 px-3 rounded-lg hover:bg-slate-100" data-en="Interesting Facts" data-ko="흥미로운 사실">Interesting Facts</a>
+      <a href="#quiz" class="block py-2 px-3 rounded-lg hover:bg-slate-100" data-en="Interactive Quiz" data-ko="상호작용 퀴즈">Interactive Quiz</a>
+      <a href="#faq" class="block py-2 px-3 rounded-lg hover:bg-slate-100" data-en="FAQ" data-ko="자주 묻는 질문">FAQ</a>
+      <a href="#contact" class="block py-2 px-3 rounded-lg hover:bg-slate-100" data-en="Contact & Sources" data-ko="문의 및 출처">Contact & Sources</a>
+    </div>
+  </header>
+
+  <!-- Main Content Container -->
+  <main class="pt-20">
+
+    <!-- HERO SECTION -->
+    <section id="home" class="relative min-h-[90vh] flex items-center justify-center overflow-hidden py-16 lg:py-24">
+      
+      <!-- Campus Hero Image Background with Soft Gradients -->
+      <div class="absolute inset-0 z-0">
+        <img 
+          src="assets/images/campus_hero.jpg" 
+          alt="Picturesque South Korean University Campus in Seoul with students walking amidst traditional Korean pavilions and golden autumn trees" 
+          class="w-full h-full object-cover object-center filter brightness-[0.92]"
+        />
+        <!-- Korean flag inspired subtle gradient overlays for crisp readability -->
+        <div class="absolute inset-0 bg-gradient-to-r from-[#0A192F]/90 via-[#0F2B5C]/80 to-[#0A192F]/65 mix-blend-multiply"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-80"></div>
+      </div>
+
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+        
+        <!-- Taegeuk Pill Badge -->
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs font-semibold mb-6 animate-subtle-pulse">
+          <span class="w-2 h-2 rounded-full bg-[#D82B38]"></span>
+          <span data-en="Global Academic Powerhouse • Republic of Korea" data-ko="글로벌 교육 강국 • 대한민국 교육 제도 안내">
+            Global Academic Powerhouse • Republic of Korea
+          </span>
+        </div>
+
+        <!-- Main Heading -->
+        <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-tight max-w-4xl mx-auto drop-shadow-md">
+          <span data-en="Discover the Korean Education System" data-ko="한국의 교육 제도를 알아보세요">
+            Discover the Korean Education System
+          </span>
+        </h1>
+
+        <!-- Subtitle in Korean & English -->
+        <p class="text-xl sm:text-2xl md:text-3xl font-bold text-rose-300 mt-4 tracking-wide font-heading drop-shadow">
+          <span data-en="한국의 교육 제도를 알아보세요" data-ko="World-Class Learning, Culture & Innovation">
+            한국의 교육 제도를 알아보세요
+          </span>
+        </p>
+
+        <!-- Introduction Paragraph -->
+        <p class="max-w-2xl mx-auto text-sm sm:text-base md:text-lg text-slate-200 mt-6 leading-relaxed font-normal">
+          <span data-en="South Korea's education system is celebrated worldwide for academic rigor, technological innovation, and deep cultural reverence for teachers and learning. From foundational 6-3-3 schooling to the monumental Suneung exam and premier SKY universities, explore how dedication fuels national success." data-ko="대한민국의 교육 제도는 높은 학업 성취도, 첨단 기술의 접목, 배움과 교사에 대한 깊은 사회적 존중으로 전 세계의 주목을 받고 있습니다. 초·중·고 6-3-3 학제부터 수능 시험과 SKY 명문 대학까지, 한국 교육의 모든 것을 한눈에 살펴보세요.">
+            South Korea's education system is celebrated worldwide for academic rigor, technological innovation, and deep cultural reverence for teachers and learning. From foundational 6-3-3 schooling to the monumental Suneung exam and premier SKY universities, explore how dedication fuels national success.
+          </span>
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
+          <a 
+            id="explore-btn"
+            href="#education-structure" 
+            class="px-7 py-3.5 rounded-xl font-bold text-sm bg-[#D82B38] text-white hover:bg-rose-600 transition-all shadow-lg shadow-rose-900/30 flex items-center gap-2 group"
+          >
+            <span data-en="Explore Education Stages" data-ko="학제 구조 탐색하기">Explore Education Stages</span>
+            <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+          </a>
+          <a 
+            href="#comparison" 
+            class="px-7 py-3.5 rounded-xl font-bold text-sm bg-white/15 backdrop-blur-md text-white border border-white/30 hover:bg-white/25 transition-all"
+            data-en="Korea vs India Matrix" 
+            data-ko="한-인 교육 비교 분석"
+          >
+            Korea vs India Matrix
+          </a>
+          <a 
+            href="#quiz" 
+            class="px-6 py-3.5 rounded-xl font-bold text-sm bg-[#0F2B5C] text-white border border-blue-400/30 hover:bg-blue-900 transition-all"
+            data-en="Test Your Knowledge (Quiz)" 
+            data-ko="한국 교육 퀴즈 풀기"
+          >
+            Test Your Knowledge (Quiz)
+          </a>
+        </div>
+
+        <!-- Key Quick Stats Strip -->
+        <div class="mt-14 grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-4xl mx-auto">
+          <div class="bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-white/15 text-left">
+            <span class="text-2xl sm:text-3xl font-black text-rose-300">6-3-3-4</span>
+            <div class="text-xs text-slate-300 font-semibold mt-1" data-en="National School Structure" data-ko="국가 정규 학제 연한">National School Structure</div>
+          </div>
+          <div class="bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-white/15 text-left">
+            <span class="text-2xl sm:text-3xl font-black text-blue-200">99%+</span>
+            <div class="text-xs text-slate-300 font-semibold mt-1" data-en="Adult Literacy Rate" data-ko="국민 문해율">Adult Literacy Rate</div>
+          </div>
+          <div class="bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-white/15 text-left">
+            <span class="text-2xl sm:text-3xl font-black text-emerald-300">Top 5</span>
+            <div class="text-xs text-slate-300 font-semibold mt-1" data-en="OECD PISA Worldwide" data-ko="OECD PISA 글로벌 순위">OECD PISA Worldwide</div>
+          </div>
+          <div class="bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-white/15 text-left">
+            <span class="text-2xl sm:text-3xl font-black text-amber-200">100%</span>
+            <div class="text-xs text-slate-300 font-semibold mt-1" data-en="Free Public High School" data-ko="고교 무상교육 전면 시행">Free Public High School</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION A: EDUCATION STRUCTURE -->
+    <section id="education-structure" class="py-20 bg-slate-50 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header -->
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <span class="text-xs font-bold uppercase tracking-wider text-[#D82B38] px-3 py-1 rounded-full bg-rose-50 border border-rose-200" data-en="Section A • Education Pathway" data-ko="섹션 A • 한국의 학제 구조">
+            Section A • Education Pathway
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-[#0F2B5C] mt-3">
+            <span data-en="South Korea's Education Structure" data-ko="대한민국 정규 교육 학제">
+              South Korea's Education Structure
+            </span>
+          </h2>
+          <p class="text-slate-600 text-sm sm:text-base mt-2">
+            <span data-en="South Korea operates a unified 6-3-3-4 single-track schooling system guaranteeing quality, equity, and seamless progression from early childhood through higher education." data-ko="한국은 유치원부터 초등학교(6년), 중학교(3년), 고등학교(3년), 대학교(4년)로 이어지는 6-3-3-4 단선형 학제를 채택하여 공평하고 체계적인 배움을 보장합니다.">
+              South Korea operates a unified 6-3-3-4 single-track schooling system guaranteeing quality, equity, and seamless progression from early childhood through higher education.
+            </span>
+          </p>
+        </div>
+
+        <!-- Stage Timeline Visual Bar -->
+        <div class="mb-8 p-4 bg-white rounded-2xl border border-slate-200 shadow-sm overflow-x-auto">
+          <div class="flex items-center justify-between min-w-[650px] gap-2 text-center text-xs">
+            <div class="flex-1 p-2 rounded-lg bg-emerald-50 text-emerald-800 border border-emerald-200">
+              <span class="font-extrabold block">Kindergarten</span>
+              <span class="text-[11px] text-emerald-600">Ages 3–5 (1-3 yrs)</span>
+            </div>
+            <span class="text-slate-400 font-bold">→</span>
+            <div class="flex-1 p-2 rounded-lg bg-blue-50 text-blue-800 border border-blue-200">
+              <span class="font-extrabold block">Elementary</span>
+              <span class="text-[11px] text-blue-600">Ages 6–11 (6 yrs)</span>
+            </div>
+            <span class="text-slate-400 font-bold">→</span>
+            <div class="flex-1 p-2 rounded-lg bg-indigo-50 text-indigo-800 border border-indigo-200">
+              <span class="font-extrabold block">Middle School</span>
+              <span class="text-[11px] text-indigo-600">Ages 12–14 (3 yrs)</span>
+            </div>
+            <span class="text-slate-400 font-bold">→</span>
+            <div class="flex-1 p-2 rounded-lg bg-rose-50 text-rose-800 border border-rose-200">
+              <span class="font-extrabold block">High School</span>
+              <span class="text-[11px] text-rose-600">Ages 15–17 (3 yrs)</span>
+            </div>
+            <span class="text-slate-400 font-bold">→</span>
+            <div class="flex-1 p-2 rounded-lg bg-violet-50 text-violet-800 border border-violet-200">
+              <span class="font-extrabold block">Higher Education</span>
+              <span class="text-[11px] text-violet-600">Ages 18+ (4+ yrs)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Stage Tabs -->
+        <div id="stage-tabs" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 mb-8">
+          <!-- Populated by app.js -->
+        </div>
+
+        <!-- Active Stage Detailed Card -->
+        <div id="stages-container">
+          <!-- Populated by app.js -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION B: SCHOOL LIFE IN KOREA -->
+    <section id="school-life" class="py-20 bg-white border-y border-slate-200/80">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-14">
+          <span class="text-xs font-bold uppercase tracking-wider text-[#0F2B5C] px-3 py-1 rounded-full bg-blue-50 border border-blue-200" data-en="Section B • Campus Culture" data-ko="섹션 B • 생생한 학교 생활">
+            Section B • Campus Culture
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-[#0F2B5C] mt-3">
+            <span data-en="School Life in South Korea" data-ko="한국의 학교 생활과 일상 문화">
+              School Life in South Korea
+            </span>
+          </h2>
+          <p class="text-slate-600 text-sm sm:text-base mt-2">
+            <span data-en="What is it really like to be a Korean student? From crisp school uniforms and homeroom bonds to afternoon cleaning duties and vibrant Dong-ari clubs." data-ko="한국 학생들의 실제 하루는 어떤 모습일까요? 단정한 교복, 담임선생님과의 끈끈한 유대, 학급 청소 당번, 다채로운 동아리 활동을 만나보세요.">
+              What is it really like to be a Korean student? From crisp school uniforms and homeroom bonds to afternoon cleaning duties and vibrant Dong-ari clubs.
+            </span>
+          </p>
+        </div>
+
+        <!-- Feature Spotlight Image & Intro -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center mb-14">
+          <div class="lg:col-span-7 rounded-2xl overflow-hidden border border-slate-200 shadow-xl group">
+            <img 
+              src="assets/images/classroom_life.jpg" 
+              alt="Bright modern South Korean high school classroom with smiling students in neat uniforms actively participating with teacher" 
+              class="w-full h-80 sm:h-96 object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+          </div>
+          <div class="lg:col-span-5 space-y-4">
+            <div class="inline-flex items-center gap-2 text-xs font-extrabold px-3 py-1 rounded-full bg-rose-50 text-[#D82B38] border border-rose-200">
+              <span data-en="Camaraderie & Respect" data-ko="사제동행과 급우 간의 신뢰">Camaraderie & Respect</span>
+            </div>
+            <h3 class="text-2xl font-black text-[#0F2B5C] leading-snug">
+              <span data-en="The Korean Classroom: A Tightly-Knit Family" data-ko="한국의 교실: 배움과 인성을 함께 키우는 공동체">
+                The Korean Classroom: A Tightly-Knit Family
+              </span>
+            </h3>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              <span data-en="In South Korea, classmates stay in the same home classroom for the entire academic year while subject teachers rotate. Under the compassionate guidance of their homeroom teacher (담임선생님), students form deep lifelong bonds, eat lunch together, and share daily chores." data-ko="한국 학교는 학생들이 1년 동안 같은 교실에서 생활하고 교과 교사들이 교실을 이동하는 담임제를 운영합니다. 담임선생님의 지도 아래 급우들은 식사와 청소를 함께하며 평생 이어질 깊은 우정을 쌓아갑니다.">
+                In South Korea, classmates stay in the same home classroom for the entire academic year while subject teachers rotate. Under the compassionate guidance of their homeroom teacher (담임선생님), students form deep lifelong bonds, eat lunch together, and share daily chores.
+              </span>
+            </p>
+            <div class="pt-2 flex flex-wrap gap-2 text-xs font-bold text-slate-700">
+              <span class="px-3 py-1 bg-slate-100 rounded-lg">#교복 (Gyobok)</span>
+              <span class="px-3 py-1 bg-slate-100 rounded-lg">#실내화 (Silnae-hwa)</span>
+              <span class="px-3 py-1 bg-slate-100 rounded-lg">#청소시간 (Cleaning)</span>
+              <span class="px-3 py-1 bg-slate-100 rounded-lg">#동아리 (Dong-ari)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dynamic School Life Cards Grid -->
+        <div id="school-life-container" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Populated by app.js -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION C: KOREAN EXAMINATIONS & SUNEUNG -->
+    <section id="examinations" class="py-20 bg-gradient-to-b from-slate-900 via-[#0A192F] to-[#0F2B5C] text-white relative overflow-hidden">
+      
+      <!-- Subtle Dancheong background pattern -->
+      <div class="absolute inset-0 dancheong-pattern opacity-40"></div>
+
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-14">
+          <span class="text-xs font-bold uppercase tracking-wider text-rose-300 px-3.5 py-1 rounded-full bg-rose-900/40 border border-rose-500/30" data-en="Section C • High Stakes Assessment" data-ko="섹션 C • 국가 대표 시험">
+            Section C • High Stakes Assessment
+          </span>
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-black mt-3 text-white">
+            <span data-en="The Suneung (수능) & College Admissions" data-ko="대학수학능력시험 (수능)과 대학 입시">
+              The Suneung (수능) & College Admissions
+            </span>
+          </h2>
+          <p class="text-slate-300 text-sm sm:text-base mt-2">
+            <span data-en="Held every November, the College Scholastic Ability Test (CSAT / 수능) is Korea's 1-day academic marathon where an entire nation pauses to honor student effort." data-ko="매년 11월 셋째 주 목요일, 50만 명의 수험생이 응시하는 수능은 대한민국 전 국민이 한마음으로 수험생을 응원하고 배려하는 국가적 시험입니다.">
+              Held every November, the College Scholastic Ability Test (CSAT / 수능) is Korea's 1-day academic marathon where an entire nation pauses to honor student effort.
+            </span>
+          </p>
+        </div>
+
+        <!-- Suneung Photo & National Support Measures -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center mb-14">
+          <div class="lg:col-span-5 rounded-2xl overflow-hidden border border-white/20 shadow-2xl">
+            <img 
+              src="assets/images/suneung_exam.jpg" 
+              alt="South Korean high school students focused on taking the Suneung CSAT exam with official test booklets and blackboard instructions" 
+              class="w-full h-80 sm:h-96 object-cover filter brightness-[0.95]"
+            />
+          </div>
+          <div class="lg:col-span-7 space-y-4">
+            <h3 class="text-2xl font-black text-rose-300">
+              <span data-en="When an Entire Nation Pauses for Students" data-ko="수능 날, 온 나라가 수험생을 위해 멈추는 이유">
+                When an Entire Nation Pauses for Students
+              </span>
+            </h3>
+            <p class="text-slate-300 text-sm leading-relaxed">
+              <span data-en="The Suneung test day is a rare cultural phenomenon. To guarantee zero noise during the 35-minute English listening comprehension exam, commercial flights across Korea cannot take off or land. Government offices delay opening to clear highway congestion, and police escort delayed students to test sites." data-ko="수능 시험 당일은 한국의 독특한 배려 문화가 빛나는 날입니다. 오후 영어 듣기평가 시간(35분간)에는 전국 모든 공항의 항공기 이착륙이 전면 중단되며, 출근 시간 1시간 연기와 경찰 싸이카 비상 수송 작전이 펼쳐집니다.">
+                The Suneung test day is a rare cultural phenomenon. To guarantee zero noise during the 35-minute English listening comprehension exam, commercial flights across Korea cannot take off or land. Government offices delay opening to clear highway congestion, and police escort delayed students to test sites.
+              </span>
+            </p>
+
+            <!-- Grid of 4 National Measures -->
+            <div id="suneung-measures" class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+              <!-- Populated by app.js -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Suneung Marathon Timetable (8:40 to 17:45) -->
+        <div class="bg-white/95 text-slate-800 rounded-2xl p-6 sm:p-8 shadow-2xl border border-white/20 mb-10">
+          <div class="flex flex-wrap items-center justify-between gap-4 mb-6 border-b border-slate-200 pb-4">
+            <div>
+              <span class="text-xs font-extrabold uppercase tracking-wider text-[#D82B38] bg-rose-50 px-2.5 py-0.5 rounded" data-en="Official Timetable" data-ko="공식 수능 일과표">Official Timetable</span>
+              <h4 class="text-xl sm:text-2xl font-extrabold text-[#0F2B5C] mt-1" data-en="The 8-Hour Test Day Timetable (수능 하루 일정)" data-ko="수능 당일 8시간 시험 일정">
+                The 8-Hour Test Day Timetable (수능 하루 일정)
+              </h4>
+            </div>
+            <div class="text-xs text-slate-500 font-semibold" data-en="Administered by KICE (한국교육과정평가원)" data-ko="한국교육과정평가원(KICE) 출제 및 주관">
+              Administered by KICE (한국교육과정평가원)
+            </div>
+          </div>
+
+          <div id="suneung-timetable" class="space-y-3">
+            <!-- Populated by app.js -->
+          </div>
+        </div>
+
+        <!-- Two Admissions Tracks: Susie vs Jeongsi -->
+        <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 sm:p-8 border border-white/15">
+          <h4 class="text-lg sm:text-xl font-bold text-white mb-2" data-en="How Korean Universities Admit Students" data-ko="한국 대학교의 두 가지 핵심 입시 전형">
+            How Korean Universities Admit Students
+          </h4>
+          <p class="text-slate-300 text-xs sm:text-sm mb-6" data-en="Admissions in South Korea operate across two main pathways: Susie (Rolling early admission based on high school transcript grades) and Jeongsi (Regular admission based primarily on national Suneung scores)." data-ko="한국의 대입 전형은 고교 3년간의 내신 성적과 학교생활기록부를 중점 반영하는 '수시모집'과 수능 성적을 중심으로 선발하는 '정시모집'으로 나뉩니다.">
+            Admissions in South Korea operate across two main pathways: Susie (Rolling early admission based on high school transcript grades) and Jeongsi (Regular admission based primarily on national Suneung scores).
+          </p>
+          <div id="suneung-admissions-split" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <!-- Populated by app.js -->
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION D: KOREA VS INDIA EDUCATION COMPARISON -->
+    <section id="comparison" class="py-20 bg-slate-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-14">
+          <span class="text-xs font-bold uppercase tracking-wider text-blue-800 px-3 py-1 rounded-full bg-blue-50 border border-blue-200" data-en="Section D • Global Comparison" data-ko="섹션 D • 한-인 교육 비교">
+            Section D • Global Comparison
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-[#0F2B5C] mt-3">
+            <span data-en="Korean Education vs Indian Education" data-ko="한국 교육 vs 인도 교육 종합 비교">
+              Korean Education vs Indian Education
+            </span>
+          </h2>
+          <p class="text-slate-600 text-sm sm:text-base mt-2">
+            <span data-en="A side-by-side comparative analysis of structures, academic calendars, high-stakes examinations, shadow coaching cultures, and university admissions between South Korea and India." data-ko="대한민국과 인도의 학제 구조, 학사 일정, 입시 평가, 방과 후 사교육 문화, 그리고 대학교 진학 시스템을 객관적으로 비교 분석합니다.">
+              A side-by-side comparative analysis of structures, academic calendars, high-stakes examinations, shadow coaching cultures, and university admissions between South Korea and India.
+            </span>
+          </p>
+        </div>
+
+        <!-- Comparative Visual Banner -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center mb-12">
+          <div class="lg:col-span-6 rounded-2xl overflow-hidden border border-slate-200 shadow-xl">
+            <img 
+              src="assets/images/university_library.jpg" 
+              alt="Spectacular modern Korean university library in Seoul with university students studying in a quiet scholarly setting" 
+              class="w-full h-72 sm:h-80 object-cover"
+            />
+          </div>
+          <div class="lg:col-span-6 space-y-4">
+            <div class="flex items-center gap-3">
+              <span class="text-3xl">🇰🇷</span>
+              <span class="text-xl font-black text-slate-400">VS</span>
+              <span class="text-3xl">🇮🇳</span>
+            </div>
+            <h3 class="text-2xl font-bold text-[#0F2B5C]">
+              <span data-en="Two Nations with Unshakable Reverence for Education" data-ko="교육에 대한 뜨거운 열정을 품은 두 나라">
+                Two Nations with Unshakable Reverence for Education
+              </span>
+            </h3>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              <span data-en="While both South Korea and India place paramount societal importance on educational attainment and competitive exam success, their operational structures, school day routines, and assessment models display fascinating contrasts." data-ko="한국과 인도 모두 자녀 교육과 시험 성공을 대단히 중시하지만, 학기 시작 시점, 학제 개편(6-3-3-4 vs NEP 5+3+3+4), 교실 청소 문화, 대표 대학 리그(SKY vs IIT) 등에서 흥미로운 차이점이 나타납니다.">
+                While both South Korea and India place paramount societal importance on educational attainment and competitive exam success, their operational structures, school day routines, and assessment models display fascinating contrasts.
+              </span>
+            </p>
+            <div class="p-4 rounded-xl bg-amber-50 border border-amber-200/80 text-xs text-amber-900 leading-relaxed">
+              <span class="font-bold" data-en="Institutional Variance Note: " data-ko="참고 유의사항: ">Institutional Variance Note: </span>
+              <span data-en="Educational experiences, policies, and fee structures can vary significantly across individual public vs. private institutions, boards, and geographical regions in both countries." data-ko="학교별 세부 운영 방침, 사립 및 국공립 여부, 보드(CBSE/ICSE/주정부) 및 지역에 따라 실제 경험은 상이할 수 있습니다.">
+                Educational experiences, policies, and fee structures can vary significantly across individual public vs. private institutions, boards, and geographical regions in both countries.
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Comparative Cards List -->
+        <div id="comparison-container" class="space-y-4">
+          <!-- Populated by app.js -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION E: INTERESTING FACTS & EDTECH -->
+    <section id="facts" class="py-20 bg-white border-t border-slate-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-14">
+          <span class="text-xs font-bold uppercase tracking-wider text-emerald-800 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200" data-en="Section E • Facts & EdTech" data-ko="섹션 E • 흥미로운 사실 및 에듀테크">
+            Section E • Facts & EdTech
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-[#0F2B5C] mt-3">
+            <span data-en="Interesting Facts & Korean Educational Innovations" data-ko="한국 교육의 놀라운 성과와 혁신">
+              Interesting Facts & Korean Educational Innovations
+            </span>
+          </h2>
+          <p class="text-slate-600 text-sm sm:text-base mt-2">
+            <span data-en="How South Korea transformed from post-war poverty to an intellectual powerhouse through AI textbooks, unmatched literacy, and cultural devotion." data-ko="전쟁의 폐허에서 지식 강국으로 도약한 한국의 세계 최고 문해율, AI 맞춤형 디지털 교과서, 청년 대학 진학률 70%의 비밀을 알아보세요.">
+              How South Korea transformed from post-war poverty to an intellectual powerhouse through AI textbooks, unmatched literacy, and cultural devotion.
+            </span>
+          </p>
+        </div>
+
+        <div id="facts-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Populated by app.js -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION F: INTERACTIVE KNOWLEDGE QUIZ -->
+    <section id="quiz" class="py-20 bg-slate-100/70 border-t border-slate-200">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center mb-10">
+          <span class="text-xs font-bold uppercase tracking-wider text-[#D82B38] px-3 py-1 rounded-full bg-rose-50 border border-rose-200" data-en="Interactive Learning" data-ko="배움 확인 퀴즈">
+            Interactive Learning
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-[#0F2B5C] mt-3">
+            <span data-en="Test Your Korean Education Knowledge" data-ko="한국 교육 제도 퀴즈 챌린지">
+              Test Your Korean Education Knowledge
+            </span>
+          </h2>
+          <p class="text-slate-600 text-sm sm:text-base mt-2">
+            <span data-en="Answer multiple-choice questions about Korean school years, Suneung safety protocols, and student culture to test what you learned!" data-ko="수능 당일 비행기 통제, 6-3-3 학제, 학교 생활 문화 등 알찬 퀴즈를 풀고 점수를 확인해보세요!">
+              Answer multiple-choice questions about Korean school years, Suneung safety protocols, and student culture to test what you learned!
+            </span>
+          </p>
+        </div>
+
+        <!-- Quiz Container Card -->
+        <div id="quiz-card" class="bg-white rounded-2xl border border-slate-200 shadow-xl p-6 sm:p-8">
+          <!-- Populated by app.js -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION G: FREQUENTLY ASKED QUESTIONS (FAQ) -->
+    <section id="faq" class="py-20 bg-white border-t border-slate-200">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center mb-12">
+          <span class="text-xs font-bold uppercase tracking-wider text-[#0F2B5C] px-3 py-1 rounded-full bg-blue-50 border border-blue-200" data-en="Section G • Knowledge Base" data-ko="섹션 G • 자주 묻는 질문">
+            Section G • Knowledge Base
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-[#0F2B5C] mt-3">
+            <span data-en="Frequently Asked Questions" data-ko="자주 묻는 질문 (FAQ)">
+              Frequently Asked Questions
+            </span>
+          </h2>
+          <p class="text-slate-600 text-sm sm:text-base mt-2">
+            <span data-en="Clear, authentic answers to common student inquiries regarding schooling years, international admissions, compulsory policies, and Suneung." data-ko="수업 연한, 의무교육 범위, 외국인 유학 자격, 수능 및 수업 언어에 대해 알기 쉽게 답변해 드립니다.">
+              Clear, authentic answers to common student inquiries regarding schooling years, international admissions, compulsory policies, and Suneung.
+            </span>
+          </p>
+        </div>
+
+        <!-- FAQ List Container -->
+        <div id="faq-container" class="space-y-3">
+          <!-- Populated by app.js -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION H: CONTACT & OFFICIAL CITATIONS -->
+    <section id="contact" class="py-20 bg-slate-50 border-t border-slate-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          
+          <!-- Contact Form (Left) -->
+          <div class="lg:col-span-7 bg-white rounded-2xl border border-slate-200 p-8 shadow-md">
+            <span class="text-xs font-bold uppercase tracking-wider text-[#D82B38] px-2.5 py-0.5 rounded bg-rose-50" data-en="Feedback & Inquiries" data-ko="문의 및 피드백">
+              Feedback & Inquiries
+            </span>
+            <h3 class="text-2xl font-extrabold text-[#0F2B5C] mt-2 mb-2">
+              <span data-en="Have Questions About Korean Education?" data-ko="한국 교육 제도에 대해 궁금한 점이 있으신가요?">
+                Have Questions About Korean Education?
+              </span>
+            </h3>
+            <p class="text-slate-500 text-xs sm:text-sm mb-6">
+              <span data-en="Submit an inquiry or presentation feedback. No personal data is stored without permission." data-ko="궁금한 사항이나 프로젝트 피드백을 남겨주시면 정성껏 안내해 드립니다.">
+                Submit an inquiry or presentation feedback. No personal data is stored without permission.
+              </span>
+            </p>
+
+            <form id="contact-form" class="space-y-4">
+              <div>
+                <label for="contact-name" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1" data-en="Full Name" data-ko="이름">
+                  Full Name
+                </label>
+                <input 
+                  type="text" 
+                  id="contact-name" 
+                  required 
+                  placeholder="e.g. Min-jun Kim / Alex Sharma"
+                  data-en="e.g. Min-jun Kim / Alex Sharma"
+                  data-ko="이름을 입력하세요 (예: 김민준 / 홍길동)"
+                  class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-[#0F2B5C]"
+                />
+              </div>
+
+              <div>
+                <label for="contact-email" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1" data-en="Email Address" data-ko="이메일 주소">
+                  Email Address
+                </label>
+                <input 
+                  type="email" 
+                  id="contact-email" 
+                  required 
+                  placeholder="name@example.com"
+                  data-en="name@example.com"
+                  data-ko="name@example.com"
+                  class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-[#0F2B5C]"
+                />
+              </div>
+
+              <div>
+                <label for="contact-topic" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1" data-en="Inquiry Topic" data-ko="문의 분야">
+                  Inquiry Topic
+                </label>
+                <select id="contact-topic" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-[#0F2B5C] bg-white">
+                  <option value="stages" data-en="School Structure (초·중·고 학제)" data-ko="초·중·고 학제 문의">School Structure (초·중·고 학제)</option>
+                  <option value="suneung" data-en="Suneung & University Admissions (수능 및 대입)" data-ko="수능 및 대입 전형">Suneung & University Admissions (수능 및 대입)</option>
+                  <option value="studyinkorea" data-en="Study in Korea / GKS Scholarships (외국인 유학)" data-ko="외국인 유학 및 GKS 장학금">Study in Korea / GKS Scholarships (외국인 유학)</option>
+                  <option value="comparison" data-en="Korea vs India Curriculum Comparison" data-ko="한-인 교육과정 비교">Korea vs India Curriculum Comparison</option>
+                  <option value="other" data-en="General Academic Feedback" data-ko="기타 학술 피드백">General Academic Feedback</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="contact-message" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1" data-en="Your Message" data-ko="문의 내용">
+                  Your Message
+                </label>
+                <textarea 
+                  id="contact-message" 
+                  rows="4" 
+                  required 
+                  placeholder="Type your question or comments here..."
+                  data-en="Type your question or comments here..."
+                  data-ko="문의하실 내용이나 궁금한 점을 적어주세요..."
+                  class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-[#0F2B5C]"
+                ></textarea>
+              </div>
+
+              <button 
+                type="submit" 
+                class="w-full py-3 rounded-xl font-bold text-sm bg-[#0F2B5C] text-white hover:bg-blue-900 transition-all shadow-md flex items-center justify-center gap-2"
+              >
+                <span data-en="Send Message" data-ko="문의 제출하기">Send Message</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+              </button>
+            </form>
+
+            <!-- Success Toast Container -->
+            <div id="contact-toast" class="hidden mt-4 p-4 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-900"></div>
+          </div>
+
+          <!-- Official Government & University Citations (Right) -->
+          <div class="lg:col-span-5 space-y-6">
+            <div>
+              <span class="text-xs font-bold uppercase tracking-wider text-[#0F2B5C] px-2.5 py-0.5 rounded bg-blue-50" data-en="Reliable Sources" data-ko="공식 출처 및 기관">
+                Reliable Sources
+              </span>
+              <h3 class="text-2xl font-extrabold text-[#0F2B5C] mt-2 mb-2" data-en="Official Educational Authorities" data-ko="공식 교육 정부 기관 및 데이터 출처">
+                Official Educational Authorities
+              </h3>
+              <p class="text-slate-600 text-xs sm:text-sm leading-relaxed" data-en="This website integrates educational frameworks, policies, and statistical data compiled from official South Korean government bodies and verified academic institutes:" data-ko="본 웹사이트의 모든 교육 제도 및 통계는 대한민국 교육부 및 공인 국가 교육 연구 기관의 공식 발표 자료를 기반으로 제작되었습니다.">
+                This website integrates educational frameworks, policies, and statistical data compiled from official South Korean government bodies and verified academic institutes:
+              </p>
+            </div>
+
+            <div class="space-y-3">
+              <a 
+                href="https://www.moe.go.kr" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="p-4 rounded-xl bg-white border border-slate-200 shadow-sm hover-lift flex items-center justify-between group"
+              >
+                <div>
+                  <h4 class="font-bold text-sm text-[#0F2B5C] group-hover:text-[#D82B38] transition-colors">
+                    Ministry of Education (교육부)
+                  </h4>
+                  <p class="text-xs text-slate-500">Official South Korea Government Ministry • moe.go.kr</p>
+                </div>
+                <svg class="w-4 h-4 text-slate-400 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+              </a>
+
+              <a 
+                href="https://www.kedi.re.kr" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="p-4 rounded-xl bg-white border border-slate-200 shadow-sm hover-lift flex items-center justify-between group"
+              >
+                <div>
+                  <h4 class="font-bold text-sm text-[#0F2B5C] group-hover:text-[#D82B38] transition-colors">
+                    Korean Educational Development Institute (KEDI)
+                  </h4>
+                  <p class="text-xs text-slate-500">National Education Policy & Statistics Research • kedi.re.kr</p>
+                </div>
+                <svg class="w-4 h-4 text-slate-400 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+              </a>
+
+              <a 
+                href="https://www.studyinkorea.go.kr" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="p-4 rounded-xl bg-white border border-slate-200 shadow-sm hover-lift flex items-center justify-between group"
+              >
+                <div>
+                  <h4 class="font-bold text-sm text-[#0F2B5C] group-hover:text-[#D82B38] transition-colors">
+                    Study in Korea (NIIED / 국립국제교육원)
+                  </h4>
+                  <p class="text-xs text-slate-500">Global Korea Scholarship & University Admissions • studyinkorea.go.kr</p>
+                </div>
+                <svg class="w-4 h-4 text-slate-400 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+              </a>
+
+              <a 
+                href="https://www.kice.re.kr" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="p-4 rounded-xl bg-white border border-slate-200 shadow-sm hover-lift flex items-center justify-between group"
+              >
+                <div>
+                  <h4 class="font-bold text-sm text-[#0F2B5C] group-hover:text-[#D82B38] transition-colors">
+                    Korea Institute for Curriculum & Evaluation (KICE)
+                  </h4>
+                  <p class="text-xs text-slate-500">Official Suneung CSAT Administering Body • kice.re.kr</p>
+                </div>
+                <svg class="w-4 h-4 text-slate-400 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+              </a>
+            </div>
+
+            <!-- College Presentation Notice -->
+            <div class="p-4 rounded-xl bg-blue-50 border border-blue-200 text-xs text-[#0F2B5C] leading-relaxed">
+              <span class="font-bold">🎓 College Project Presentation Ready: </span>
+              <span>This web application is formatted with academic citations, responsive mobile layouts, bilingual support, and verified figures suitable for academic classroom lectures and university capstone presentations.</span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-[#0A192F] text-slate-400 text-xs py-12 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 rounded-full bg-gradient-to-tr from-[#0F2B5C] to-[#D82B38] text-white flex items-center justify-center font-bold text-xs">
+            한국
+          </div>
+          <div>
+            <span class="font-bold text-white text-sm">Korean Education System – 한국의 교육 제도</span>
+            <p class="text-[11px] text-slate-500">Educational Portal & Academic Comparison Guide</p>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap items-center justify-center gap-6 font-medium">
+          <a href="#home" class="hover:text-white transition-colors" data-en="Home" data-ko="홈">Home</a>
+          <a href="#education-structure" class="hover:text-white transition-colors" data-en="Structure" data-ko="학제 구조">Structure</a>
+          <a href="#school-life" class="hover:text-white transition-colors" data-en="School Life" data-ko="학교 생활">School Life</a>
+          <a href="#examinations" class="hover:text-white transition-colors" data-en="Suneung" data-ko="수능">Suneung</a>
+          <a href="#comparison" class="hover:text-white transition-colors" data-en="Comparison" data-ko="비교">Comparison</a>
+          <a href="#quiz" class="hover:text-white transition-colors" data-en="Quiz" data-ko="퀴즈">Quiz</a>
+        </div>
+
+        <div class="text-slate-500 text-[11px] text-center md:text-right">
+          <p>© 2026 Korean Education System Project.</p>
+          <p>Created for Educational & College Presentation Purposes.</p>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Floating Button -->
+  <button 
+    id="back-to-top" 
+    type="button" 
+    aria-label="Back to top of page"
+    class="hidden fixed bottom-6 right-6 z-40 p-3 rounded-full bg-[#0F2B5C] text-white shadow-xl hover:bg-[#D82B38] hover:scale-110 transition-all border border-white/20"
+  >
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
+  </button>
+
+  <!-- Application Scripts -->
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
