@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Suneung (수능) & College Admissions – High-Stakes Exam Guide | Korean Education</title>
+  <meta name="description" content="Inside South Korea's College Scholastic Ability Test (CSAT / Suneung): flight groundings, police escorts, 8-hour exam timetable, and Susie vs Jeongsi college admissions.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            krNavy: { DEFAULT: '#0F2B5C', dark: '#0A192F', light: '#1E3A8A' },
+            krRed: { DEFAULT: '#D82B38', soft: '#E11D48', light: '#FFE4E6' }
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='14' fill='%23ffffff' stroke='%230f2b5c' stroke-width='2'/><path d='M16 2 A 14 14 0 0 1 16 30 A 7 7 0 0 1 16 16 A 7 7 0 0 0 16 2 Z' fill='%23d82b38'/><path d='M16 30 A 14 14 0 0 1 16 2 A 7 7 0 0 1 16 16 A 7 7 0 0 0 16 30 Z' fill='%230f2b5c'/></svg>">
+</head>
+<body class="bg-slate-900 text-slate-100 antialiased selection:bg-[#D82B38] selection:text-white">
+
+  <!-- Top Korean Flag Taegeuk Bar -->
+  <div class="taegeuk-bar fixed top-0 left-0 right-0 z-50"></div>
+
+  <!-- Header / Navigation Bar -->
+  <header class="fixed top-1 left-0 right-0 z-40 glass-nav transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 md:h-20">
+        
+        <a href="index.html" class="flex items-center gap-3 group">
+          <div class="w-10 h-10 rounded-full flex items-center justify-center bg-gradient-to-tr from-[#0F2B5C] via-[#1E3A8A] to-[#D82B38] text-white font-bold shadow-md shadow-blue-900/20 group-hover:scale-105 transition-transform">
+            <span class="text-sm tracking-tighter">한국</span>
+          </div>
+          <div>
+            <div class="flex items-center gap-1.5">
+              <span class="font-extrabold text-slate-900 text-base md:text-lg tracking-tight group-hover:text-[#0F2B5C] transition-colors">
+                Korean Education
+              </span>
+              <span class="text-xs px-2 py-0.5 rounded-full font-bold bg-rose-50 text-[#D82B38] border border-rose-200 hidden sm:inline-block">
+                수능 및 입시
+              </span>
+            </div>
+            <p class="text-[11px] text-slate-500 font-medium">South Korea Academic Portal</p>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden lg:flex items-center gap-5 text-sm font-semibold text-slate-700">
+          <a href="index.html" class="hover:text-[#D82B38] transition-colors py-1" data-en="Home" data-ko="홈">Home</a>
+          <a href="structure.html" class="hover:text-[#D82B38] transition-colors py-1" data-en="Structure" data-ko="학제 구조">Structure</a>
+          <a href="school-life.html" class="hover:text-[#D82B38] transition-colors py-1" data-en="School Life" data-ko="학교 생활">School Life</a>
+          <a href="examinations.html" class="hover:text-[#D82B38] transition-colors py-1 font-bold text-[#D82B38] border-b-2 border-[#D82B38]" data-en="Suneung & Exams" data-ko="수능 및 입시">Suneung & Exams</a>
+          <a href="comparison.html" class="hover:text-[#D82B38] transition-colors py-1" data-en="Korea vs India" data-ko="한-인 비교">Korea vs India</a>
+          <a href="facts.html" class="hover:text-[#D82B38] transition-colors py-1" data-en="Facts" data-ko="주요 사실">Facts</a>
+          <a href="quiz.html" class="hover:text-[#D82B38] transition-colors py-1" data-en="Quiz" data-ko="퀴즈">Quiz</a>
+          <a href="faq.html" class="hover:text-[#D82B38] transition-colors py-1" data-en="FAQ & Contact" data-ko="FAQ 및 문의">FAQ & Contact</a>
+        </nav>
+
+        <!-- Search & Language Toggle & Mobile Hamburger -->
+        <div class="flex items-center gap-3">
+          <div class="relative hidden sm:block">
+            <div class="relative">
+              <input 
+                id="global-search-input" 
+                type="text" 
+                placeholder="Search Suneung, schedule..." 
+                data-en="Search Suneung, schedule..." 
+                data-ko="수능, 시간표, 입시 검색..." 
+                class="w-40 md:w-52 pl-8 pr-3 py-1.5 rounded-full text-xs bg-slate-100/90 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#0F2B5C] focus:bg-white transition-all text-slate-800"
+              />
+              <svg class="w-3.5 h-3.5 text-slate-400 absolute left-2.5 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+            </div>
+            <div id="search-results-dropdown" class="hidden absolute right-0 top-10 w-72 bg-white rounded-xl shadow-2xl border border-slate-200 overflow-hidden z-50 text-slate-800"></div>
+          </div>
+
+          <button 
+            id="lang-toggle-btn" 
+            type="button" 
+            class="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold bg-slate-100 hover:bg-slate-200 border border-slate-200 text-[#0F2B5C] transition-all shadow-sm"
+          >
+            <span>🇰🇷 / 🇬🇧</span>
+            <span id="lang-label">한국어</span>
+          </button>
+
+          <button 
+            id="mobile-menu-btn" 
+            type="button" 
+            class="lg:hidden p-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100"
+            aria-label="Toggle navigation menu"
+          >
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div id="mobile-menu" class="hidden lg:hidden border-t border-slate-200 bg-white/95 backdrop-blur-md px-4 pt-3 pb-6 space-y-2 text-sm font-semibold text-slate-700 shadow-xl">
+      <a href="index.html" class="block py-2 px-3 rounded-lg hover:bg-slate-100" data-en="Home" data-ko="홈">Home</a>
+      <a href="structure.html" class="block py-2 px-3 rounded-lg hover:bg-slate-100" data-en="Education Structure" data-ko="학제 구조">Education Structure</a>
+      <a href="school-life.html" class="block py-2 px-3 rounded-lg hover:bg-slate-100" data-en="School Life in Korea" data-ko="학교 생활">School Life in Korea</a>
+      <a href="examinations.html" class="block py-2 px-3 rounded-lg bg-rose-50 text-[#D82B38] font-bold" data-en="Suneung & Examinations" data-ko="수능 및 입시">Suneung & Examinations</a>
+      <a href="comparison.html" class="block py-2 px-3 rounded-lg hover:bg-slate-100" data-en="Korean vs Indian Education" data-ko="한국 vs 인도 교육">Korean vs Indian Education</a>
+      <a href="facts.html" class="block py-2 px-3 rounded-lg hover:bg-slate-100" data-en="Interesting Facts" data-ko="주요 사실">Interesting Facts</a>
+      <a href="quiz.html" class="block py-2 px-3 rounded-lg hover:bg-slate-100" data-en="Interactive Quiz" data-ko="상호작용 퀴즈">Interactive Quiz</a>
+      <a href="faq.html" class="block py-2 px-3 rounded-lg hover:bg-slate-100" data-en="FAQ & Contact" data-ko="FAQ 및 문의">FAQ & Contact</a>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="pt-24 pb-20 bg-gradient-to-b from-slate-950 via-[#0A192F] to-[#0F2B5C] relative overflow-hidden">
+    <div class="absolute inset-0 dancheong-pattern opacity-30"></div>
+
+    <!-- Hero Header -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-16 relative z-10">
+      <div class="flex items-center gap-2 text-xs font-semibold text-rose-300 mb-3 uppercase tracking-wider">
+        <a href="index.html" class="hover:underline">Home</a>
+        <span>/</span>
+        <span class="text-white">Suneung &amp; Examinations</span>
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-black tracking-tight text-white">
+        <span data-en="The Suneung (수능) & College Admissions" data-ko="대학수학능력시험 (수능)과 대학 입시">
+          The Suneung (수능) &amp; College Admissions
+        </span>
+      </h1>
+      <p class="text-slate-300 text-sm sm:text-base max-w-3xl mt-3 leading-relaxed">
+        <span data-en="Held every November, the College Scholastic Ability Test (CSAT / 수능) is Korea's 1-day academic marathon where an entire nation pauses to honor student effort." data-ko="매년 11월 셋째 주 목요일, 50만 명의 수험생이 응시하는 수능은 대한민국 전 국민이 한마음으로 수험생을 응원하고 배려하는 국가적 시험입니다.">
+          Held every November, the College Scholastic Ability Test (CSAT / 수능) is Korea's 1-day academic marathon where an entire nation pauses to honor student effort.
+        </span>
+      </p>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <!-- Suneung Photo & National Support Measures -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center mb-16">
+        <div class="lg:col-span-5 rounded-2xl overflow-hidden border border-white/20 shadow-2xl">
+          <img 
+            src="assets/images/suneung_exam.jpg" 
+            alt="South Korean high school students focused on taking the Suneung CSAT exam with official test booklets" 
+            class="w-full h-80 sm:h-96 object-cover filter brightness-[0.95]"
+          />
+        </div>
+        <div class="lg:col-span-7 space-y-4">
+          <h2 class="text-2xl sm:text-3xl font-black text-rose-300">
+            <span data-en="When an Entire Nation Pauses for Students" data-ko="수능 날, 온 나라가 수험생을 위해 멈추는 이유">
+              When an Entire Nation Pauses for Students
+            </span>
+          </h2>
+          <p class="text-slate-200 text-sm leading-relaxed">
+            <span data-en="The Suneung test day is a rare cultural phenomenon. To guarantee zero noise during the 35-minute English listening comprehension exam, commercial flights across Korea cannot take off or land. Government offices delay opening to clear highway congestion, and police escort delayed students to test sites." data-ko="수능 시험 당일은 한국의 독특한 배려 문화가 빛나는 날입니다. 오후 영어 듣기평가 시간(35분간)에는 전국 모든 공항의 항공기 이착륙이 전면 중단되며, 출근 시간 1시간 연기와 경찰 싸이카 비상 수송 작전이 펼쳐집니다.">
+              The Suneung test day is a rare cultural phenomenon. To guarantee zero noise during the 35-minute English listening comprehension exam, commercial flights across Korea cannot take off or land. Government offices delay opening to clear highway congestion, and police escort delayed students to test sites.
+            </span>
+          </p>
+
+          <!-- Grid of 4 National Measures (Rendered by app.js) -->
+          <div id="suneung-measures" class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2"></div>
+        </div>
+      </div>
+
+      <!-- Suneung Marathon Timetable (8:40 to 17:45) -->
+      <div class="bg-white/95 text-slate-800 rounded-2xl p-6 sm:p-8 shadow-2xl border border-white/20 mb-12">
+        <div class="flex flex-wrap items-center justify-between gap-4 mb-6 border-b border-slate-200 pb-4">
+          <div>
+            <span class="text-xs font-extrabold uppercase tracking-wider text-[#D82B38] bg-rose-50 px-2.5 py-0.5 rounded" data-en="Official Timetable" data-ko="공식 수능 일과표">Official Timetable</span>
+            <h3 class="text-xl sm:text-2xl font-extrabold text-[#0F2B5C] mt-1" data-en="The 8-Hour Test Day Timetable (수능 하루 일정)" data-ko="수능 당일 8시간 시험 일정">
+              The 8-Hour Test Day Timetable (수능 하루 일정)
+            </h3>
+          </div>
+          <div class="text-xs text-slate-500 font-semibold" data-en="Administered by KICE (한국교육과정평가원)" data-ko="한국교육과정평가원(KICE) 출제 및 주관">
+            Administered by KICE (한국교육과정평가원)
+          </div>
+        </div>
+
+        <div id="suneung-timetable" class="space-y-3">
+          <!-- Populated by app.js -->
+        </div>
+      </div>
+
+      <!-- Two Admissions Tracks: Susie vs Jeongsi -->
+      <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 sm:p-8 border border-white/15 mb-12">
+        <h3 class="text-lg sm:text-xl font-bold text-white mb-2" data-en="How Korean Universities Admit Students" data-ko="한국 대학교의 두 가지 핵심 입시 전형">
+          How Korean Universities Admit Students
+        </h3>
+        <p class="text-slate-300 text-xs sm:text-sm mb-6" data-en="Admissions in South Korea operate across two main pathways: Susie (Rolling early admission based on high school transcript grades) and Jeongsi (Regular admission based primarily on national Suneung scores)." data-ko="한국의 대입 전형은 고교 3년간의 내신 성적과 학교생활기록부를 중점 반영하는 '수시모집'과 수능 성적을 중심으로 선발하는 '정시모집'으로 나뉩니다.">
+          Admissions in South Korea operate across two main pathways: Susie (Rolling early admission based on high school transcript grades) and Jeongsi (Regular admission based primarily on national Suneung scores).
+        </p>
+        <div id="suneung-admissions-split" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <!-- Populated by app.js -->
+        </div>
+      </div>
+
+      <!-- Suneung Cultural Superstitions & Good Luck Gifts -->
+      <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 sm:p-8 border border-white/15 mb-16">
+        <span class="text-xs font-bold uppercase tracking-wider text-amber-300 px-3 py-1 rounded-full bg-amber-900/40 border border-amber-500/30">
+          Cultural Traditions
+        </span>
+        <h3 class="text-2xl font-black text-white mt-3 mb-2">
+          Suneung Good-Luck Gifts &amp; Superstitions (수능 찹쌀떡과 엿)
+        </h3>
+        <p class="text-slate-300 text-xs sm:text-sm mb-6 leading-relaxed">
+          In Korea, the word "to stick" (붙다) is a pun for "passing an exam". Families and junior students give distinct gifts filled with symbolic wordplay:
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs">
+          <div class="p-4 rounded-xl bg-white/5 border border-white/10">
+            <span class="text-2xl block mb-1">🍬</span>
+            <h4 class="font-bold text-white text-sm">Yeot (엿) &amp; Rice Cakes</h4>
+            <p class="text-slate-300 mt-1">Sticky traditional taffy and chapssaltteok so exam success "sticks" to the student.</p>
+          </div>
+          <div class="p-4 rounded-xl bg-white/5 border border-white/10">
+            <span class="text-2xl block mb-1">🍴</span>
+            <h4 class="font-bold text-white text-sm">Forks &amp; Axes</h4>
+            <p class="text-slate-300 mt-1">Gifts shaped like forks or toy axes to help students "pick" (찍다) or "hack" the right answers.</p>
+          </div>
+          <div class="p-4 rounded-xl bg-white/5 border border-white/10">
+            <span class="text-2xl block mb-1">🧻</span>
+            <h4 class="font-bold text-white text-sm">Roll of Toilet Paper</h4>
+            <p class="text-slate-300 mt-1">Symbolizes "unrolling smoothly" (잘 풀리다) so exam questions unravel with ease.</p>
+          </div>
+          <div class="p-4 rounded-xl bg-white/5 border border-white/10">
+            <span class="text-2xl block mb-1">🚫🍲</span>
+            <h4 class="font-bold text-rose-300 text-sm">Taboo: Seaweed Soup</h4>
+            <p class="text-slate-300 mt-1">Never eat slippery seaweed soup (미역국) on test morning, as you might "slip and fall" (미끄러지다).</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation Between Topics -->
+      <div class="border-t border-white/15 pt-10 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <a href="school-life.html" class="flex items-center gap-2 text-sm font-bold text-slate-300 hover:text-white p-3 rounded-xl border border-white/20 hover:bg-white/10 transition-all w-full sm:w-auto justify-center">
+          <span>← Previous: School Life</span>
+        </a>
+        <a href="comparison.html" class="flex items-center gap-2 text-sm font-bold text-slate-900 bg-white hover:bg-rose-50 p-3 px-6 rounded-xl shadow-md transition-all w-full sm:w-auto justify-center">
+          <span>Next Topic: Korea vs India →</span>
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-[#0A192F] text-slate-400 text-xs py-12 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 rounded-full bg-gradient-to-tr from-[#0F2B5C] to-[#D82B38] text-white flex items-center justify-center font-bold text-xs">한국</div>
+          <div>
+            <span class="font-bold text-white text-sm">Korean Education System – 한국의 교육 제도</span>
+            <p class="text-[11px] text-slate-500">Suneung Topic Guide</p>
+          </div>
+        </div>
+        <div class="flex flex-wrap items-center justify-center gap-6 font-medium">
+          <a href="index.html" class="hover:text-white transition-colors">Home</a>
+          <a href="structure.html" class="hover:text-white transition-colors">Structure</a>
+          <a href="school-life.html" class="hover:text-white transition-colors">School Life</a>
+          <a href="examinations.html" class="text-white font-bold">Suneung</a>
+          <a href="comparison.html" class="hover:text-white transition-colors">Comparison</a>
+          <a href="facts.html" class="hover:text-white transition-colors">Facts</a>
+          <a href="quiz.html" class="hover:text-white transition-colors">Quiz</a>
+          <a href="faq.html" class="hover:text-white transition-colors">FAQ & Contact</a>
+        </div>
+        <div class="text-slate-500 text-[11px] text-center md:text-right">
+          <p>© 2026 Korean Education System Project.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button id="back-to-top" type="button" aria-label="Back to top" class="hidden fixed bottom-6 right-6 z-40 p-3 rounded-full bg-[#0F2B5C] text-white shadow-xl hover:bg-[#D82B38] hover:scale-110 transition-all border border-white/20">
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
+  </button>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

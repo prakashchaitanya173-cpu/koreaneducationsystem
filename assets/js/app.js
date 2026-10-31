@@ -1,7 +1,12 @@
 // Korean Education System Website Interactive Logic
 document.addEventListener('DOMContentLoaded', () => {
   const data = window.KOREAN_EDU_DATA;
-  let currentLang = 'en'; // 'en' or 'ko'
+  let currentLang = 'en';
+  try {
+    currentLang = localStorage.getItem('korean_edu_lang') || 'en';
+  } catch (e) {
+    currentLang = 'en';
+  }
   let activeStageId = 'kindergarten';
   let activeSuneungPeriod = 0;
   let currentQuizIndex = 0;
@@ -19,6 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Initialize
   initLanguage();
+  highlightActiveNav();
   renderStages();
   renderSchoolLife();
   renderSuneung();
@@ -32,15 +38,47 @@ document.addEventListener('DOMContentLoaded', () => {
   initSearch();
 
   // --------------------------------------------------------------------------
+  // Navigation & Active Link Highlight
+  // --------------------------------------------------------------------------
+  function highlightActiveNav() {
+    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('nav a, #mobile-menu a').forEach(link => {
+      const href = link.getAttribute('href');
+      if (!href) return;
+      const targetPage = href.split('#')[0] || 'index.html';
+      if (
+        (targetPage === currentPath) ||
+        (currentPath === '' && targetPage === 'index.html') ||
+        (currentPath === '/' && targetPage === 'index.html')
+      ) {
+        link.classList.add('text-[#D82B38]', 'font-extrabold', 'border-b-2', 'border-[#D82B38]');
+      }
+    });
+  }
+
+  // --------------------------------------------------------------------------
   // Language Management
   // --------------------------------------------------------------------------
   function initLanguage() {
-    langToggleBtn.addEventListener('click', () => {
-      currentLang = currentLang === 'en' ? 'ko' : 'en';
-      data.currentLang = currentLang;
+    data.currentLang = currentLang;
+    if (langLabel) {
       langLabel.textContent = currentLang === 'en' ? '한국어' : 'English';
-      applyLanguageTranslations();
-    });
+    }
+    applyLanguageTranslations();
+
+    if (langToggleBtn) {
+      langToggleBtn.addEventListener('click', () => {
+        currentLang = currentLang === 'en' ? 'ko' : 'en';
+        data.currentLang = currentLang;
+        try {
+          localStorage.setItem('korean_edu_lang', currentLang);
+        } catch (e) {}
+        if (langLabel) {
+          langLabel.textContent = currentLang === 'en' ? '한국어' : 'English';
+        }
+        applyLanguageTranslations();
+      });
+    }
   }
 
   function applyLanguageTranslations() {
@@ -677,12 +715,26 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  const targetPageMap = {
+    'education-structure': 'structure.html',
+    'school-life': 'school-life.html',
+    'examinations': 'examinations.html',
+    'comparison': 'comparison.html',
+    'facts': 'facts.html',
+    'quiz': 'quiz.html',
+    'faq': 'faq.html',
+    'contact': 'faq.html#contact',
+    'home': 'index.html'
+  };
+
   window.jumpToSection = function(id) {
     const el = document.getElementById(id);
     if (el) {
       el.scrollIntoView({ behavior: 'smooth' });
-      searchResultsBox.classList.add('hidden');
-      searchInput.value = '';
+      if (searchResultsBox) searchResultsBox.classList.add('hidden');
+      if (searchInput) searchInput.value = '';
+    } else if (targetPageMap[id]) {
+      window.location.href = targetPageMap[id];
     }
   };
 
