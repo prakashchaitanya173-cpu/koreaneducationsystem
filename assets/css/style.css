@@ -300,38 +300,6 @@ body.intro-active {
   100% { transform: rotate(-9deg) translateY(-2px); }
 }
 
-/* Skip Button */
-.intro-skip-btn {
-  position: absolute;
-  bottom: 2rem;
-  right: 2rem;
-  z-index: 30;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
-  padding: 0.45rem 1.1rem;
-  border-radius: 9999px;
-  background: rgba(255, 255, 255, 0.12);
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  color: #CBD5E1;
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  cursor: pointer;
-  transition: all 0.2s ease;
-  user-select: none;
-}
-
-.intro-skip-btn:hover {
-  background: rgba(255, 255, 255, 0.25);
-  color: #FFFFFF;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
-}
-
 /* Keyframes for Entrance and Reveal */
 @keyframes introWordEntrance {
   0% {

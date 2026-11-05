@@ -776,7 +776,6 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    const skipBtn = document.getElementById('intro-skip-btn');
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const duration = prefersReducedMotion ? 2800 : 5000;
     let isDismissed = false;
@@ -793,24 +792,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Auto finish after exactly 5 seconds (5000ms)
-    const timer = setTimeout(finishIntro, duration);
-
-    // Skip Button Handler
-    if (skipBtn) {
-      skipBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        clearTimeout(timer);
-        finishIntro();
-      });
-    }
-
-    // Escape key shortcut to skip
-    window.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && !isDismissed) {
-        clearTimeout(timer);
-        finishIntro();
-      }
-    });
+    setTimeout(finishIntro, duration);
   }
 
   // Helper SVG Icons
