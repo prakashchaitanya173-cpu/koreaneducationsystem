@@ -37,6 +37,30 @@
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased selection:bg-[#D82B38] selection:text-white">
 
+  <!-- Opening Korean Greeting Animation Overlay ("안녕하세요") -->
+  <div id="korean-greeting-overlay" class="greeting-overlay" aria-hidden="true">
+    <div class="greeting-content">
+      <div class="greeting-word" id="greeting-word" aria-label="안녕하세요 (Hello)">
+        <span class="greeting-char" data-char="0">안</span>
+        <span class="greeting-char" data-char="1">녕</span>
+        <span class="greeting-char" data-char="2">하</span>
+        <span class="greeting-char" data-char="3">세</span>
+        <span class="greeting-char" data-char="4">요</span>
+      </div>
+      <div class="greeting-sub" id="greeting-sub">
+        <div class="greeting-sub-badge">
+          <span>🇰🇷</span>
+          <span>Annyeonghaseyo • Hello</span>
+        </div>
+        <p class="greeting-sub-desc">Welcome to the South Korea Academic Portal</p>
+        <div class="greeting-scroll-prompt">
+          <span>Scroll down to explore</span>
+          <svg class="w-3.5 h-3.5 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Top Korean Flag Taegeuk Bar -->
   <div class="taegeuk-bar fixed top-0 left-0 right-0 z-50"></div>
 
