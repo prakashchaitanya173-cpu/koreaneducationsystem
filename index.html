@@ -46,14 +46,32 @@
         <span class="intro-char char-nyeong" data-index="1">녕</span>
         <span class="intro-char char-ha" data-index="2">하</span>
         <span class="intro-char char-se" data-index="3">세</span>
-        <span class="intro-char char-yo" data-index="4">요</span>
-      </div>
-      <div class="intro-sub" id="intro-sub">
-        <div class="intro-badge">
-          <span>🇰🇷</span>
-          <span>Annyeonghaseyo • Hello</span>
-        </div>
-        <p class="intro-subtext">South Korea Academic Portal</p>
+        <span class="intro-char char-yo relative inline-block" data-index="4">
+          요
+          <!-- Engineering Degree Graduation Hat (Mortarboard) on the last letter -->
+          <span class="degree-hat" aria-hidden="true">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+              <!-- Skullcap under-structure -->
+              <path d="M18 29 L18 40 C18 48 46 48 46 40 L46 29 Z" fill="#0F172A" stroke="#CBD5E1" stroke-width="1.8"/>
+              <!-- Diamond Mortarboard Top -->
+              <polygon points="32 10 58 22 32 34 6 22" fill="#1E293B" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round"/>
+              <polygon points="32 10 58 22 32 34 6 22" fill="url(#mortarboardGrad)"/>
+              <!-- Center Button -->
+              <circle cx="32" cy="22" r="2.8" fill="#F59E0B" stroke="#78350F" stroke-width="0.8"/>
+              <!-- Golden Tassel String & Pendant -->
+              <path d="M32 22 Q46 25 50 36 Q51 44 52 48" stroke="#F59E0B" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+              <polygon points="49 48 55 48 53.5 56 50.5 56" fill="#F59E0B"/>
+              <!-- Gradient definitions -->
+              <defs>
+                <linearGradient id="mortarboardGrad" x1="6" y1="10" x2="58" y2="34" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#334155"/>
+                  <stop offset="0.6" stop-color="#0F172A"/>
+                  <stop offset="1" stop-color="#020617"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </span>
+        </span>
       </div>
     </div>
     <button id="intro-skip-btn" class="intro-skip-btn" type="button" aria-label="Skip Intro">

@@ -233,7 +233,7 @@ body.intro-active {
   will-change: transform, opacity;
 }
 
-/* 5 Syllable Trajectory Scatter Keyframe Animations (1.85s -> 3.8s) */
+/* 5 Syllable Trajectory Scatter Keyframe Animations with Dynamic Full Rotations (1.85s -> 3.8s) */
 .char-an {
   animation: scatterAn 1.95s cubic-bezier(0.22, 1, 0.36, 1) 1.85s forwards;
 }
@@ -252,69 +252,52 @@ body.intro-active {
 
 @keyframes scatterAn {
   0% { transform: translate3d(0, 0, 0) rotate(0deg) scale(1); opacity: 1; }
-  45% { opacity: 1; }
-  100% { transform: translate3d(-35vw, -27vh, 0) rotate(-26deg) scale(1.18); opacity: 0; }
+  40% { opacity: 1; }
+  100% { transform: translate3d(-38vw, -30vh, 0) rotate(-380deg) scale(1.24); opacity: 0; }
 }
 
 @keyframes scatterNyeong {
   0% { transform: translate3d(0, 0, 0) rotate(0deg) scale(1); opacity: 1; }
-  45% { opacity: 1; }
-  100% { transform: translate3d(-8vw, -37vh, 0) rotate(18deg) scale(1.08); opacity: 0; }
+  40% { opacity: 1; }
+  100% { transform: translate3d(-8vw, -42vh, 0) rotate(360deg) scale(1.15); opacity: 0; }
 }
 
 @keyframes scatterHa {
   0% { transform: translate3d(0, 0, 0) rotate(0deg) scale(1); opacity: 1; }
-  45% { opacity: 1; }
-  100% { transform: translate3d(14vw, -24vh, 0) rotate(-16deg) scale(1.22); opacity: 0; }
+  40% { opacity: 1; }
+  100% { transform: translate3d(16vw, -28vh, 0) rotate(-320deg) scale(1.22); opacity: 0; }
 }
 
 @keyframes scatterSe {
   0% { transform: translate3d(0, 0, 0) rotate(0deg) scale(1); opacity: 1; }
-  45% { opacity: 1; }
-  100% { transform: translate3d(-26vw, 29vh, 0) rotate(-28deg) scale(1.12); opacity: 0; }
+  40% { opacity: 1; }
+  100% { transform: translate3d(-28vw, 32vh, 0) rotate(360deg) scale(1.18); opacity: 0; }
 }
 
 @keyframes scatterYo {
   0% { transform: translate3d(0, 0, 0) rotate(0deg) scale(1); opacity: 1; }
-  45% { opacity: 1; }
-  100% { transform: translate3d(36vw, 23vh, 0) rotate(32deg) scale(1.26); opacity: 0; }
+  40% { opacity: 1; }
+  100% { transform: translate3d(38vw, 26vh, 0) rotate(420deg) scale(1.28); opacity: 0; }
 }
 
-/* Subtitle and Badge Animation */
-.intro-sub {
-  margin-top: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.6rem;
-  animation: introSubSequence 2.1s cubic-bezier(0.16, 1, 0.3, 1) 0.35s both;
-  will-change: opacity, transform;
+/* Engineering Degree Graduation Cap (Mortarboard) on last character '요' */
+.degree-hat {
+  position: absolute;
+  top: -0.42em;
+  right: -0.16em;
+  width: 0.76em;
+  height: 0.76em;
+  pointer-events: none;
+  transform-origin: 35% 65%;
+  transform: rotate(-14deg);
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.85));
+  z-index: 5;
+  animation: hatSlightBob 2.2s ease-in-out infinite alternate;
 }
 
-.intro-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.4rem 1.25rem;
-  border-radius: 9999px;
-  background: rgba(255, 255, 255, 0.14);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.28);
-  color: #FFE4E6;
-  font-weight: 700;
-  font-size: clamp(0.75rem, 2.2vw, 0.95rem);
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
-}
-
-.intro-subtext {
-  font-size: clamp(0.75rem, 2vw, 0.9rem);
-  color: #E2E8F0;
-  font-weight: 500;
-  letter-spacing: 0.02em;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+@keyframes hatSlightBob {
+  0% { transform: rotate(-14deg) translateY(0); }
+  100% { transform: rotate(-9deg) translateY(-2px); }
 }
 
 /* Skip Button */
@@ -363,21 +346,6 @@ body.intro-active {
   }
 }
 
-@keyframes introSubSequence {
-  0% {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-  20%, 75% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  100% {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-}
-
 @keyframes introOverlayReveal {
   0% {
     opacity: 1;
@@ -405,9 +373,8 @@ body.intro-active {
     animation: none !important;
     transform: none !important;
   }
-  .intro-sub {
+  .degree-hat {
     animation: none !important;
-    opacity: 1 !important;
   }
   .intro-overlay {
     animation: introOverlayReduced 2.8s ease forwards !important;
