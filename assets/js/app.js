@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initialize
   initLanguage();
   highlightActiveNav();
+  initOpeningSequence();
   renderStages();
   renderSchoolLife();
   renderSuneung();
@@ -762,6 +763,53 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     backToTopBtn?.addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  // --------------------------------------------------------------------------
+  // Full-Screen 5-Second Opening Sequence ("안녕하세요") Controller
+  // --------------------------------------------------------------------------
+  function initOpeningSequence() {
+    const overlay = document.getElementById('intro-overlay');
+    if (!overlay) {
+      document.body.classList.remove('intro-active');
+      return;
+    }
+
+    const skipBtn = document.getElementById('intro-skip-btn');
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const duration = prefersReducedMotion ? 2800 : 5000;
+    let isDismissed = false;
+
+    function finishIntro() {
+      if (isDismissed) return;
+      isDismissed = true;
+      document.body.classList.remove('intro-active');
+      overlay.classList.add('intro-dismissed');
+      setTimeout(() => {
+        overlay.style.display = 'none';
+        overlay.setAttribute('aria-hidden', 'true');
+      }, 450);
+    }
+
+    // Auto finish after exactly 5 seconds (5000ms)
+    const timer = setTimeout(finishIntro, duration);
+
+    // Skip Button Handler
+    if (skipBtn) {
+      skipBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        clearTimeout(timer);
+        finishIntro();
+      });
+    }
+
+    // Escape key shortcut to skip
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !isDismissed) {
+        clearTimeout(timer);
+        finishIntro();
+      }
     });
   }
 

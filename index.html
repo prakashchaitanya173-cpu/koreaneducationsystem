@@ -35,7 +35,32 @@
   <!-- Favicon Icon (South Korea Taegeuk Symbol SVG) -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='14' fill='%23ffffff' stroke='%230f2b5c' stroke-width='2'/><path d='M16 2 A 14 14 0 0 1 16 30 A 7 7 0 0 1 16 16 A 7 7 0 0 0 16 2 Z' fill='%23d82b38'/><path d='M16 30 A 14 14 0 0 1 16 2 A 7 7 0 0 1 16 16 A 7 7 0 0 0 16 30 Z' fill='%230f2b5c'/></svg>">
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased selection:bg-[#D82B38] selection:text-white">
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-[#D82B38] selection:text-white intro-active">
+
+  <!-- Full-Screen 5-Second Opening Sequence ("안녕하세요") -->
+  <div id="intro-overlay" class="intro-overlay" role="dialog" aria-modal="true" aria-label="Welcome Opening Animation">
+    <div class="intro-backdrop-dancheong"></div>
+    <div class="intro-content">
+      <div class="intro-word" id="intro-word" aria-label="안녕하세요 (Hello)">
+        <span class="intro-char char-an" data-index="0">안</span>
+        <span class="intro-char char-nyeong" data-index="1">녕</span>
+        <span class="intro-char char-ha" data-index="2">하</span>
+        <span class="intro-char char-se" data-index="3">세</span>
+        <span class="intro-char char-yo" data-index="4">요</span>
+      </div>
+      <div class="intro-sub" id="intro-sub">
+        <div class="intro-badge">
+          <span>🇰🇷</span>
+          <span>Annyeonghaseyo • Hello</span>
+        </div>
+        <p class="intro-subtext">South Korea Academic Portal</p>
+      </div>
+    </div>
+    <button id="intro-skip-btn" class="intro-skip-btn" type="button" aria-label="Skip Intro">
+      <span>Skip Intro</span>
+      <span aria-hidden="true">→</span>
+    </button>
+  </div>
 
   <!-- Top Korean Flag Taegeuk Bar -->
   <div class="taegeuk-bar fixed top-0 left-0 right-0 z-50"></div>
