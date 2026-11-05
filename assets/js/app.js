@@ -25,7 +25,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initialize
   initLanguage();
   highlightActiveNav();
-  initGreetingAnimation();
   renderStages();
   renderSchoolLife();
   renderSuneung();
@@ -764,114 +763,6 @@ document.addEventListener('DOMContentLoaded', () => {
     backToTopBtn?.addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
-  }
-
-  // --------------------------------------------------------------------------
-  // Korean Greeting ("안녕하세요") Opening & Scroll Scatter Animation
-  // --------------------------------------------------------------------------
-  function initGreetingAnimation() {
-    const overlay = document.getElementById('korean-greeting-overlay');
-    if (!overlay) return;
-
-    const chars = overlay.querySelectorAll('.greeting-char');
-    const sub = document.getElementById('greeting-sub');
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-    // Trajectory definitions for each character:
-    // [vx in vw, vy in vh, rot in deg, scaleFactor]
-    const trajectories = [
-      { vx: -32, vy: -28, rot: -28, scale: 1.15 }, // 안: top-left
-      { vx: -8,  vy: -38, rot: 20,  scale: 1.05 }, // 녕: top-center
-      { vx: 12,  vy: -22, rot: -18, scale: 1.20 }, // 하: top-right
-      { vx: -24, vy: 30,  rot: -30, scale: 1.10 }, // 세: bottom-left
-      { vx: 35,  vy: 24,  rot: 32,  scale: 1.25 }  // 요: bottom-right
-    ];
-
-    let ticking = false;
-
-    function updateScatter() {
-      const scrollY = window.scrollY || window.pageYOffset || 0;
-      const maxScroll = Math.min(window.innerHeight * 0.7, 440);
-      const threshold = 25; // Keep text readable before dispersing
-
-      if (prefersReducedMotion) {
-        // If reduced motion is requested, just fade out gently without transforms
-        const fadeProgress = Math.min(scrollY / 180, 1);
-        overlay.style.opacity = (1 - fadeProgress).toString();
-        overlay.style.visibility = fadeProgress >= 1 ? 'hidden' : 'visible';
-        ticking = false;
-        return;
-      }
-
-      if (scrollY <= threshold) {
-        // Initial state: readable, centered, intact
-        overlay.style.visibility = 'visible';
-        overlay.style.opacity = '1';
-        if (sub) {
-          sub.style.opacity = '1';
-          sub.style.transform = 'translateY(0)';
-        }
-        chars.forEach(char => {
-          char.style.transform = 'translate3d(0, 0, 0) rotate(0deg) scale(1)';
-          char.style.opacity = '1';
-        });
-      } else if (scrollY > threshold && scrollY < maxScroll) {
-        overlay.style.visibility = 'visible';
-        const progress = (scrollY - threshold) / (maxScroll - threshold);
-
-        // Subtitle and prompt fade out rapidly
-        if (sub) {
-          const subFade = Math.min(progress / 0.3, 1);
-          sub.style.opacity = (1 - subFade).toString();
-          sub.style.transform = `translateY(${-15 * subFade}px)`;
-        }
-
-        // Overlay backdrop vignette fades out
-        const bgFade = Math.min(progress / 0.5, 1);
-        overlay.style.background = `radial-gradient(circle at center, rgba(10, 25, 47, ${0.75 * (1 - bgFade)}) 0%, rgba(10, 25, 47, ${0.45 * (1 - bgFade)}) 55%, transparent 85%)`;
-
-        // Letters disperse outward and smoothly fade towards the end
-        // Letters stay vibrant (opacity 1) from 0 to 0.45, then fade to 0 from 0.45 to 1.0
-        let charOpacity = 1;
-        if (progress > 0.45) {
-          charOpacity = Math.max(0, 1 - (progress - 0.45) / 0.55);
-        }
-
-        chars.forEach((char, idx) => {
-          const traj = trajectories[idx] || { vx: 0, vy: 0, rot: 0, scale: 1 };
-          const tx = traj.vx * progress;
-          const ty = traj.vy * progress;
-          const rot = traj.rot * progress;
-          const scale = 1 + (traj.scale - 1) * progress;
-
-          char.style.transform = `translate3d(${tx}vw, ${ty}vh, 0) rotate(${rot}deg) scale(${scale})`;
-          char.style.opacity = charOpacity.toString();
-        });
-      } else {
-        // Fully scrolled past: hide completely to avoid any render overhead
-        overlay.style.visibility = 'hidden';
-        overlay.style.opacity = '0';
-      }
-
-      ticking = false;
-    }
-
-    window.addEventListener('scroll', () => {
-      if (!ticking) {
-        window.requestAnimationFrame(updateScatter);
-        ticking = true;
-      }
-    }, { passive: true });
-
-    window.addEventListener('resize', () => {
-      if (!ticking) {
-        window.requestAnimationFrame(updateScatter);
-        ticking = true;
-      }
-    }, { passive: true });
-
-    // Initial check on load
-    updateScatter();
   }
 
   // Helper SVG Icons
