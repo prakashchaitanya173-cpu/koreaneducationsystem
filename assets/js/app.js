@@ -143,38 +143,60 @@ document.addEventListener('DOMContentLoaded', () => {
     
     container.innerHTML = `
       <div class="bg-white rounded-2xl border border-slate-200 shadow-xl overflow-hidden hover-lift transition-all">
-        <div class="p-6 md:p-8 border-b border-slate-100 flex flex-wrap items-center justify-between gap-4 bg-gradient-to-r from-slate-50 to-white">
-          <div>
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold ${current.badgeColor}">
-              <span class="w-2 h-2 rounded-full bg-current animate-ping"></span>
-              <span>${isKo ? current.compulsoryKo : current.compulsoryEn}</span>
+        <!-- Top Spotlight Banner with Real Stage Photo & Stage Header -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 border-b border-slate-100 bg-gradient-to-r from-slate-50 to-white">
+          ${current.image ? `
+            <div class="lg:col-span-5 h-64 sm:h-72 lg:h-auto min-h-[260px] relative overflow-hidden bg-slate-900 group">
+              <img 
+                src="${current.image}" 
+                alt="${isKo ? current.imageAltKo : current.imageAltEn}" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-95 group-hover:opacity-100"
+                loading="lazy"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none"></div>
+              <div class="absolute bottom-3 left-4 right-4 flex items-center justify-between text-white pointer-events-none">
+                <span class="text-xs font-extrabold px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/20">
+                  ${current.koreanTerm}
+                </span>
+                <span class="text-xs font-semibold text-slate-200">
+                  ${isKo ? current.durationKo : current.durationEn}
+                </span>
+              </div>
             </div>
-            <h3 class="text-2xl md:text-3xl font-extrabold text-[#0F2B5C] mt-2">
-              ${isKo ? current.nameKo : current.nameEn}
-            </h3>
-            <p class="text-slate-500 text-sm mt-1">
-              ${isKo ? '대상 연령: ' + current.ageKo + ' | 수업 연한: ' + current.durationKo : 'Ages: ' + current.ageEn + ' | Duration: ' + current.durationEn}
-            </p>
-          </div>
-          <div class="text-right">
-            <span class="text-5xl font-black text-slate-200">${current.koreanTerm}</span>
+          ` : ''}
+          <div class="${current.image ? 'lg:col-span-7' : 'lg:col-span-12'} p-6 md:p-8 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between gap-2">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold ${current.badgeColor}">
+                  <span class="w-2 h-2 rounded-full bg-current animate-ping"></span>
+                  <span>${isKo ? current.compulsoryKo : current.compulsoryEn}</span>
+                </div>
+                <span class="text-4xl font-black text-slate-200 hidden sm:inline-block">${current.koreanTerm}</span>
+              </div>
+              <h3 class="text-2xl md:text-3xl font-extrabold text-[#0F2B5C] mt-2.5">
+                ${isKo ? current.nameKo : current.nameEn}
+              </h3>
+              <p class="text-slate-500 text-sm mt-1">
+                ${isKo ? '대상 연령: ' + current.ageKo + ' | 수업 연한: ' + current.durationKo : 'Ages: ' + current.ageEn + ' | Duration: ' + current.durationEn}
+              </p>
+            </div>
+
+            <div class="mt-5 pt-4 border-t border-slate-100">
+              <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1.5">
+                ${isKo ? '교육 개요 및 목적' : 'Stage Overview & Core Purpose'}
+              </h4>
+              <p class="text-slate-700 leading-relaxed text-sm sm:text-base font-medium">
+                ${isKo ? current.summaryKo : current.summaryEn}
+              </p>
+              <p class="text-slate-600 text-xs sm:text-sm mt-2">
+                ${isKo ? current.purposeKo : current.purposeEn}
+              </p>
+            </div>
           </div>
         </div>
 
         <div class="p-6 md:p-8 space-y-6">
-          <div>
-            <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">
-              ${isKo ? '교육 개요 및 목적' : 'Stage Overview & Core Purpose'}
-            </h4>
-            <p class="text-slate-700 leading-relaxed text-base font-medium">
-              ${isKo ? current.summaryKo : current.summaryEn}
-            </p>
-            <p class="text-slate-600 text-sm mt-2">
-              ${isKo ? current.purposeKo : current.purposeEn}
-            </p>
-          </div>
-
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 border-t border-slate-100">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <h4 class="text-xs font-bold uppercase tracking-wider text-[#0F2B5C] mb-3 flex items-center gap-2">
                 <svg class="w-4 h-4 text-[#D82B38]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
@@ -190,14 +212,16 @@ document.addEventListener('DOMContentLoaded', () => {
               </ul>
             </div>
 
-            <div class="bg-slate-50 rounded-xl p-5 border border-slate-200/80">
-              <h4 class="text-xs font-bold uppercase tracking-wider text-slate-700 mb-2 flex items-center gap-2">
-                <svg class="w-4 h-4 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                ${isKo ? '표준 일과 시간' : 'Typical Daily Schedule'}
-              </h4>
-              <p class="text-sm font-semibold text-slate-800">
-                ${isKo ? current.dailyRoutineKo : current.dailyRoutineEn}
-              </p>
+            <div class="bg-slate-50 rounded-xl p-5 border border-slate-200/80 flex flex-col justify-between">
+              <div>
+                <h4 class="text-xs font-bold uppercase tracking-wider text-slate-700 mb-2 flex items-center gap-2">
+                  <svg class="w-4 h-4 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                  ${isKo ? '표준 일과 시간' : 'Typical Daily Schedule'}
+                </h4>
+                <p class="text-sm font-semibold text-slate-800">
+                  ${isKo ? current.dailyRoutineKo : current.dailyRoutineEn}
+                </p>
+              </div>
               <div class="mt-4 pt-3 border-t border-slate-200 text-xs text-slate-500">
                 ${isKo ? '※ 방과후 프로그램 및 방학 중 돌봄교실 지원' : '※ Includes government after-school care and enrichment options.'}
               </div>
