@@ -825,7 +825,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // --------------------------------------------------------------------------
-  // Full-Screen 5-Second Opening Sequence ("안녕하세요") Controller
+  // Full-Screen 5-Second Opening Video Sequence Controller
   // --------------------------------------------------------------------------
   function initOpeningSequence() {
     const overlay = document.getElementById('intro-overlay');
@@ -834,8 +834,8 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
+    const video = document.getElementById('intro-video');
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const duration = prefersReducedMotion ? 2800 : 5000;
     let isDismissed = false;
 
     function finishIntro() {
@@ -843,14 +843,33 @@ document.addEventListener('DOMContentLoaded', () => {
       isDismissed = true;
       document.body.classList.remove('intro-active');
       overlay.classList.add('intro-dismissed');
+      if (video) {
+        try { video.pause(); } catch(e) {}
+      }
       setTimeout(() => {
         overlay.style.display = 'none';
         overlay.setAttribute('aria-hidden', 'true');
-      }, 450);
+      }, 600);
     }
 
-    // Auto finish after exactly 5 seconds (5000ms)
-    setTimeout(finishIntro, duration);
+    if (prefersReducedMotion) {
+      setTimeout(finishIntro, 1000);
+      return;
+    }
+
+    if (video) {
+      video.muted = true;
+      const playPromise = video.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(() => {});
+      }
+
+      // Smoothly dismiss once video finishes
+      video.addEventListener('ended', finishIntro);
+    }
+
+    // Safety fallback: auto-finish at 5.2s
+    setTimeout(finishIntro, 5200);
   }
 
   // Helper SVG Icons
