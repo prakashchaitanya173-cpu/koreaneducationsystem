@@ -393,6 +393,9 @@ window.KOREAN_EDU_DATA = {
       stat: '99%+',
       statLabelEn: 'Literacy Rate',
       statLabelKo: '국민 문해율',
+      image: 'assets/images/fact_literacy_hangul.jpg',
+      imageAltEn: 'Statue of King Sejong the Great and Hangul calligraphy in Seoul celebrating universal literacy',
+      imageAltKo: '광화문 광장의 세종대왕 동상과 한글 창제 문해율 상징',
       descEn: 'South Korea maintains near 100% literacy thanks to the scientific phonetic design of King Sejong\'s Hangul alphabet and universal primary schooling.',
       descKo: '세종대왕이 창제한 과학적 음소문자 한글과 100% 무상 의무교육 덕분에 한국은 세계 최고 수준의 문해율을 자랑합니다.'
     },
@@ -404,6 +407,9 @@ window.KOREAN_EDU_DATA = {
       stat: 'Top 5',
       statLabelEn: 'OECD PISA Worldwide',
       statLabelKo: 'OECD 학업성취도',
+      image: 'assets/images/fact_pisa_excellence.jpg',
+      imageAltEn: 'Korean high school students studying advanced mathematics and science with focus',
+      imageAltKo: '수학 및 과학 문제 해결에 몰입하는 한국 고등학생들의 학업 성취',
       descEn: 'Korean 15-year-olds consistently rank in the world top 5 across reading literacy, mathematics, and science on OECD PISA global benchmarks.',
       descKo: '한국의 만 15세 학생들은 OECD 국제학업성취도평가(PISA)에서 읽기, 수학, 과학 전 영역에 걸쳐 꾸준히 세계 최상위권을 수성하고 있습니다.'
     },
@@ -415,6 +421,9 @@ window.KOREAN_EDU_DATA = {
       stat: '100%',
       statLabelEn: 'High-speed School Fiber',
       statLabelKo: '초고속 학내망 보급',
+      image: 'assets/images/fact_smart_edtech.jpg',
+      imageAltEn: 'Modern Korean classroom with students utilizing AI-powered digital textbooks on smart tablets',
+      imageAltKo: 'AI 맞춤형 디지털 교과서와 태블릿을 활용하는 스마트 교실 수업',
       descEn: 'Korea is pioneering AI-powered digital textbooks adapting exercise difficulty to student pace, backed by gigabit Wi-Fi in every public classroom.',
       descKo: '한국 교육부는 학생별 학습 속도에 맞춤 대응하는 AI 디지털 교과서를 도입하고 전국 교실에 초고속 기가 무선망을 구축했습니다.'
     },
@@ -426,6 +435,9 @@ window.KOREAN_EDU_DATA = {
       stat: '69.6%',
       statLabelEn: 'Ages 25-34 with Degree',
       statLabelKo: '청년층 고등교육 이수율',
+      image: 'assets/images/fact_tertiary_degrees.jpg',
+      imageAltEn: 'South Korean university graduates celebrating bachelor degrees in academic regalia',
+      imageAltKo: '학위 가운을 입고 졸업을 축하하는 한국 대학생들',
       descEn: 'Nearly 70% of young Koreans hold a tertiary degree—the highest rate among OECD member countries, reflecting cultural devotion to education.',
       descKo: '한국의 25~34세 청년층 고등교육 이수율은 약 70%로, OECD 국가 중 압도적 1위를 기록하며 배움에 대한 남다른 열정을 보여줍니다.'
     },
@@ -437,6 +449,9 @@ window.KOREAN_EDU_DATA = {
       stat: '200,000+',
       statLabelEn: 'International Students',
       statLabelKo: '국내 외국인 유학생 수',
+      image: 'assets/images/fact_gks_international.jpg',
+      imageAltEn: 'Diverse international students smiling and studying together on a South Korean university campus',
+      imageAltKo: '한국 대학 캠퍼스에서 함께 공부하는 다양한 국적의 외국인 유학생들',
       descEn: 'The Korean Ministry of Education funds generous Global Korea Scholarships covering round-trip flights, full tuition, living stipends, and language training.',
       descKo: '교육부 산하 국립국제교육원은 항공료, 등록금 전액, 생활비 및 한국어 연수를 지원하는 GKS 장학금으로 전 세계 인재를 유치하고 있습니다.'
     },
@@ -448,6 +463,9 @@ window.KOREAN_EDU_DATA = {
       stat: '1950s→Now',
       statLabelEn: 'Miracle on the Han River',
       statLabelKo: '한강의 기적 견인',
+      image: 'assets/images/fact_education_fever.jpg',
+      imageAltEn: 'Korean students studying late at night in a modern quiet academic study cafe in Seoul',
+      imageAltKo: '조용한 독서실과 스터디 카페에서 밤늦도록 학업에 정진하는 학생들',
       descEn: 'Post-war Korea transformed from one of the poorest nations into a top global economy largely because parents invested tirelessly in children\'s schooling.',
       descKo: '한국전쟁 직후 최빈국이었던 한국이 세계 10대 경제강국으로 도약한 가장 결정적인 원동력은 바로 뜨거운 자녀 교육열이었습니다.'
     }

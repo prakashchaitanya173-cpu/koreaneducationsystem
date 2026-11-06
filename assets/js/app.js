@@ -370,23 +370,57 @@ document.addEventListener('DOMContentLoaded', () => {
     const isKo = currentLang === 'ko';
 
     container.innerHTML = data.interestingFacts.map(fact => `
-      <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm hover-lift transition-all flex flex-col justify-between">
+      <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover-lift transition-all flex flex-col justify-between group">
         <div>
-          <div class="flex items-center justify-between mb-4">
-            <span class="text-3xl font-black text-[#0F2B5C] tracking-tight">${fact.stat}</span>
-            <div class="w-10 h-10 rounded-xl bg-red-50 text-[#D82B38] flex items-center justify-center">
-              ${getIconSvg(fact.icon)}
+          ${fact.image ? `
+            <div class="relative h-48 w-full overflow-hidden bg-slate-900">
+              <img 
+                src="${fact.image}" 
+                alt="${isKo ? fact.imageAltKo : fact.imageAltEn}" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100"
+                loading="lazy"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent pointer-events-none"></div>
+              
+              <!-- Stat Badge Overlay -->
+              <div class="absolute bottom-3 left-4 right-4 flex items-end justify-between text-white pointer-events-none">
+                <div>
+                  <span class="text-[11px] font-extrabold uppercase tracking-wider text-rose-300 drop-shadow-sm block mb-0.5">
+                    ${isKo ? fact.statLabelKo : fact.statLabelEn}
+                  </span>
+                  <span class="text-2xl sm:text-3xl font-black tracking-tight drop-shadow-md text-white">
+                    ${fact.stat}
+                  </span>
+                </div>
+                <div class="w-9 h-9 rounded-xl bg-white/20 backdrop-blur-md border border-white/30 text-white flex items-center justify-center shadow-lg">
+                  ${getIconSvg(fact.icon)}
+                </div>
+              </div>
             </div>
+          ` : `
+            <div class="p-6 pb-0 flex items-center justify-between mb-4">
+              <span class="text-3xl font-black text-[#0F2B5C] tracking-tight">${fact.stat}</span>
+              <div class="w-10 h-10 rounded-xl bg-red-50 text-[#D82B38] flex items-center justify-center">
+                ${getIconSvg(fact.icon)}
+              </div>
+            </div>
+          `}
+          <div class="p-6">
+            <h4 class="text-base sm:text-lg font-bold text-slate-900 group-hover:text-[#0F2B5C] transition-colors mb-2 leading-snug">
+              ${isKo ? fact.titleKo : fact.titleEn}
+            </h4>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              ${isKo ? fact.descKo : fact.descEn}
+            </p>
           </div>
-          <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">
-            ${isKo ? fact.statLabelKo : fact.statLabelEn}
-          </div>
-          <h4 class="text-lg font-bold text-slate-900 mb-2">
-            ${isKo ? fact.titleKo : fact.titleEn}
-          </h4>
-          <p class="text-xs text-slate-600 leading-relaxed">
-            ${isKo ? fact.descKo : fact.descEn}
-          </p>
+        </div>
+
+        <div class="px-6 pb-5 pt-0 border-t border-slate-100 flex items-center justify-between text-[11px] font-semibold text-slate-500">
+          <span class="flex items-center gap-1.5 text-emerald-700">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+            ${isKo ? '공식 교육 지표' : 'Verified Metric'}
+          </span>
+          <span class="text-slate-400 font-mono text-[10px]">#Facts</span>
         </div>
       </div>
     `).join('');
