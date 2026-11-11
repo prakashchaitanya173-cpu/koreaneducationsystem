@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initialize
   initLanguage();
   highlightActiveNav();
+  initHomeNavigationSkip();
   initOpeningSequence();
   renderStages();
   renderSchoolLife();
@@ -46,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('nav a, #mobile-menu a').forEach(link => {
       const href = link.getAttribute('href');
       if (!href) return;
-      const targetPage = href.split('#')[0] || 'index.html';
+      const targetPage = href.split(/[?#]/)[0] || 'index.html';
       if (
         (targetPage === currentPath) ||
         (currentPath === '' && targetPage === 'index.html') ||
@@ -55,6 +56,117 @@ document.addEventListener('DOMContentLoaded', () => {
         link.classList.add('text-[#D82B38]', 'font-extrabold', 'border-b-2', 'border-[#D82B38]');
       }
     });
+  }
+
+  // --------------------------------------------------------------------------
+  // Skip Intro When Navigating via Any Home Link
+  // --------------------------------------------------------------------------
+  function isHomePageLink(anchor) {
+    if (!anchor || anchor.hasAttribute('download')) return false;
+    const rawHref = anchor.getAttribute('href');
+    if (
+      !rawHref ||
+      rawHref.startsWith('#') ||
+      rawHref.startsWith('mailto:') ||
+      rawHref.startsWith('tel:') ||
+      rawHref.startsWith('javascript:')
+    ) {
+      return false;
+    }
+    try {
+      const targetUrl = new URL(rawHref, window.location.href);
+      if (targetUrl.origin !== window.location.origin && targetUrl.protocol !== 'file:') {
+        return false;
+      }
+      const targetFile = targetUrl.pathname.split('/').pop();
+      if (targetFile === 'index.html') return true;
+      if (targetFile === '') {
+        const currentDir = window.location.pathname.replace(/[^/]*$/, '');
+        return targetUrl.pathname === currentDir;
+      }
+      return false;
+    } catch (e) {
+      return rawHref.split(/[?#]/)[0] === 'index.html';
+    }
+  }
+
+  function storeSkipIntroFlag() {
+    try {
+      sessionStorage.setItem('kr_edu_skip_intro', '1');
+      return true;
+    } catch (e) {
+      return false;
+    }
+  }
+
+  function initHomeNavigationSkip() {
+    function handleHomeLinkEvent(e) {
+      if (e.type === 'auxclick' && e.button !== 1) return;
+      const anchor = e.target && e.target.closest ? e.target.closest('a[href]') : null;
+      if (!isHomePageLink(anchor)) return;
+
+      const rawHref = anchor.getAttribute('href');
+      let targetUrl;
+      try {
+        targetUrl = new URL(rawHref, window.location.href);
+      } catch (err) {
+        targetUrl = null;
+      }
+
+      const currentFile = window.location.pathname.split('/').pop() || 'index.html';
+      const onHomePage = currentFile === 'index.html' || currentFile === '';
+      const isPrimarySameTab =
+        e.type === 'click' &&
+        e.button === 0 &&
+        !e.metaKey &&
+        !e.ctrlKey &&
+        !e.shiftKey &&
+        !e.altKey &&
+        anchor.getAttribute('target') !== '_blank';
+
+      // Already on Home page (same-tab left click): smoothly jump without replaying intro
+      if (onHomePage && isPrimarySameTab) {
+        const hashId = targetUrl && targetUrl.hash ? targetUrl.hash.slice(1) : '';
+        const hashTarget = hashId ? document.getElementById(hashId) : null;
+        if (!hashId || hashId === 'home' || hashTarget) {
+          e.preventDefault();
+          if (mobileMenu) mobileMenu.classList.add('hidden');
+          if (searchResultsBox) searchResultsBox.classList.add('hidden');
+          document.documentElement.classList.add('intro-skip');
+          document.body.classList.remove('intro-active');
+          if (hashTarget) {
+            hashTarget.scrollIntoView({ behavior: 'smooth' });
+          } else {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }
+          return;
+        }
+      }
+
+      const stored = storeSkipIntroFlag();
+      const needsQueryParam =
+        !stored ||
+        window.location.protocol === 'file:' ||
+        !isPrimarySameTab;
+
+      if (needsQueryParam && targetUrl) {
+        if (isPrimarySameTab) {
+          e.preventDefault();
+          targetUrl.searchParams.set('skipIntro', '1');
+          window.location.assign(targetUrl.href);
+        } else {
+          // Opening Home in a new tab / window (middle-click, Ctrl/Cmd+click, target="_blank")
+          targetUrl.searchParams.set('skipIntro', '1');
+          anchor.setAttribute('href', targetUrl.href);
+          setTimeout(() => {
+            anchor.setAttribute('href', rawHref);
+          }, 150);
+        }
+      }
+    }
+
+    document.addEventListener('click', handleHomeLinkEvent, { capture: true });
+    document.addEventListener('auxclick', handleHomeLinkEvent, { capture: true });
   }
 
   // --------------------------------------------------------------------------
@@ -793,6 +905,13 @@ document.addEventListener('DOMContentLoaded', () => {
       if (searchResultsBox) searchResultsBox.classList.add('hidden');
       if (searchInput) searchInput.value = '';
     } else if (targetPageMap[id]) {
+      if (targetPageMap[id] === 'index.html') {
+        const stored = storeSkipIntroFlag();
+        if (!stored || window.location.protocol === 'file:') {
+          window.location.href = 'index.html?skipIntro=1';
+          return;
+        }
+      }
       window.location.href = targetPageMap[id];
     }
   };
@@ -835,6 +954,23 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const video = document.getElementById('intro-video');
+
+    if (document.documentElement.classList.contains('intro-skip')) {
+      document.body.classList.remove('intro-active');
+      overlay.classList.add('intro-dismissed');
+      overlay.style.display = 'none';
+      overlay.setAttribute('aria-hidden', 'true');
+      if (video) {
+        try {
+          video.pause();
+          video.removeAttribute('autoplay');
+          video.removeAttribute('src');
+          video.load();
+        } catch (e) {}
+      }
+      return;
+    }
+
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     let isDismissed = false;
     let playbackTimer = null;

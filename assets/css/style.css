@@ -249,6 +249,20 @@ body.intro-active {
   transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.6s ease !important;
 }
 
+/* Instant intro bypass when navigating back to home via Home links or Back button */
+html.intro-skip body.intro-active {
+  overflow: auto !important;
+  height: auto !important;
+  overscroll-behavior: auto;
+}
+
+html.intro-skip .intro-overlay {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
 /* Reduced Motion Settings */
 @media (prefers-reduced-motion: reduce) {
   .intro-overlay {
