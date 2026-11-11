@@ -486,57 +486,6 @@ window.KOREAN_EDU_DATA = {
     }
   ],
 
-  faqs: [
-    {
-      categoryEn: 'General',
-      categoryKo: '일반 정보',
-      qEn: 'How many years does a student study in South Korea from start to finish?',
-      qKo: '한국 학생은 초등학교부터 대학교까지 총 몇 년간 공부하나요?',
-      aEn: 'The standard Korean school pathway follows a 6-3-3-4 structure: 6 years of elementary school, 3 years of middle school, and 3 years of high school—totaling 12 years of basic schooling. University bachelor programs typically add 4 years (or 2-3 years for junior vocational colleges, and 6 years for medicine/dental degrees).',
-      aKo: '한국의 기본 학제는 6-3-3-4 체계입니다. 초등학교 6년, 중학교 3년, 고등학교 3년으로 총 12년간 초·중등 교육을 받으며, 이후 일반 4년제 대학교 학사 과정(전문대는 2~3년, 의학계열은 6년)으로 이어집니다.'
-    },
-    {
-      categoryEn: 'Examinations',
-      categoryKo: '시험 및 평가',
-      qEn: 'What exactly is the Suneung (수능)?',
-      qKo: '수능(대학수학능력시험)이란 구체적으로 어떤 시험인가요?',
-      aEn: 'The Suneung (수능, College Scholastic Ability Test or CSAT) is South Korea\'s national university entrance exam administered every November by KICE (Korea Institute for Curriculum and Evaluation). It is a rigorous, one-day multiple-choice exam testing Korean, Mathematics, English, Korean History, Inquiry subjects, and Foreign Languages. Scores carry monumental weight for regular university admissions.',
-      aKo: '수능은 한국교육과정평가원(KICE)이 매년 11월 전국적으로 주관하는 국가 주도 대학 입학 시험입니다. 하루 동안 국어, 수학, 영어, 한국사, 탐구, 제2외국어 영역을 연속해서 치르며, 대학 정시모집에서 가장 핵심적인 전형 자료로 활용됩니다.'
-    },
-    {
-      categoryEn: 'Policy',
-      categoryKo: '교육 제도',
-      qEn: 'Is education compulsory and free in South Korea?',
-      qKo: '한국에서 의무교육과 무상교육의 범위는 어떻게 되나요?',
-      aEn: 'Yes! Education is legally compulsory for 9 years (6 years of Elementary School + 3 years of Middle School, covering ages 6 to 14). In addition, since 2021, high school education is 100% tuition-free nationwide, meaning all 12 years of public schooling now enjoy government tuition subsidies and free nutritious lunches.',
-      aKo: '네, 초등학교 6년과 중학교 3년(만 6~14세) 총 9년은 헌법이 보장하는 의무교육입니다. 또한 2021년부터 고등학교 무상교육이 전면 시행되어 12년 초·중·고 전 과정의 입학금, 수업료, 학교운영지원비 및 친환경 무상 급식이 제공됩니다.'
-    },
-    {
-      categoryEn: 'International',
-      categoryKo: '외국인 유학',
-      qEn: 'Can international students study at Korean universities?',
-      qKo: '외국인 학생도 한국 대학교에 진학할 수 있나요?',
-      aEn: 'Absolutely. Over 200,000 international students study in South Korea. Hundreds of degree programs are taught 100% in English (especially in Business, Engineering, and International Studies). South Korea offers the prestigious Global Korea Scholarship (GKS) that covers round-trip airfare, full university tuition, monthly living stipends, and medical insurance.',
-      aKo: '물론입니다. 현재 20만 명 이상의 외국인 유학생이 한국 대학에서 재학 중입니다. 경영학, IT공학, 국제학 등 많은 학과에서 100% 영어 강의를 제공하며, 정부초청장학금(GKS)을 통해 등록금, 생활비, 왕복 항공료 전액을 지원받을 수 있습니다.'
-    },
-    {
-      categoryEn: 'General',
-      categoryKo: '수업 환경',
-      qEn: 'What language is used in Korean schools?',
-      qKo: '한국 학교에서는 어떤 언어로 수업을 진행하나요?',
-      aEn: 'The primary medium of instruction in Korean public schools is Korean (한국어). English is introduced as a mandatory academic subject beginning in 3rd grade of elementary school and continues through high school. International and foreign language high schools offer specialized immersion tracks.',
-      aKo: '한국의 정규 학교 수업은 원칙적으로 한국어로 진행됩니다. 영어는 초등학교 3학년부터 정규 교과목으로 편성되어 고등학교까지 집중 학습하며, 외국어고등학교나 국제학교 등에서는 다양한 외국어 몰입 교육이 이루어집니다.'
-    },
-    {
-      categoryEn: 'School Life',
-      categoryKo: '학원 문화',
-      qEn: 'What are Hagwons and are they mandatory?',
-      qKo: '학원(Hagwon)이란 무엇이며 꼭 다녀야 하나요?',
-      aEn: 'Hagwons (학원) are private, for-profit tutoring academies where students attend after regular school hours for supplementary math, English, science, piano, Taekwondo, or exam prep. While completely optional, they are deeply rooted in Korean society with over 75% student participation.',
-      aKo: '학원은 정규 학교 일과가 끝난 후 수학, 영어, 논술, 예체능(피아노, 태권도) 등을 보충하는 사설 교육기관입니다. 법적 의무는 아니지만 한국 학생의 75% 이상이 실력 향상과 심화 학습을 위해 자율적으로 이용하고 있습니다.'
-    }
-  ],
-
   quiz: [
     {
       questionEn: 'How many total years do students spend in Korean elementary, middle, and high school combined?',

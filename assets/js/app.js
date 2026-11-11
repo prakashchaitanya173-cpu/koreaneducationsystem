@@ -32,9 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
   renderSuneung();
   renderComparison('all');
   renderFacts();
-  renderFaqs('all');
   initQuiz();
-  initContactForm();
   initMobileMenu();
   initScrollListeners();
   initSearch();
@@ -213,7 +211,6 @@ document.addEventListener('DOMContentLoaded', () => {
     renderSuneung();
     renderComparison(document.querySelector('.comp-filter-btn.active')?.dataset.category || 'all');
     renderFacts();
-    renderFaqs(document.querySelector('.faq-filter-btn.active')?.dataset.category || 'all');
     renderQuizQuestion();
   }
 
@@ -563,59 +560,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // --------------------------------------------------------------------------
-  // Frequently Asked Questions (FAQ)
-  // --------------------------------------------------------------------------
-  function renderFaqs(category) {
-    const container = document.getElementById('faq-container');
-    if (!container) return;
-    const isKo = currentLang === 'ko';
-
-    const filtered = category === 'all' 
-      ? data.faqs 
-      : data.faqs.filter(f => f.categoryEn.toLowerCase() === category.toLowerCase());
-
-    container.innerHTML = filtered.map((faq, idx) => `
-      <div class="faq-item border border-slate-200 rounded-xl bg-white overflow-hidden shadow-sm transition-all">
-        <button 
-          type="button" 
-          onclick="window.toggleFaq(${idx})" 
-          class="w-full text-left px-6 py-4.5 flex items-center justify-between gap-4 font-bold text-slate-800 text-sm md:text-base hover:text-[#0F2B5C] transition-colors"
-          aria-expanded="false"
-        >
-          <span class="flex items-center gap-3">
-            <span class="w-6 h-6 rounded-full bg-blue-100 text-[#0F2B5C] text-xs flex items-center justify-center font-extrabold shrink-0">Q</span>
-            <span>${isKo ? faq.qKo : faq.qEn}</span>
-          </span>
-          <svg class="faq-icon w-5 h-5 text-slate-400 transition-transform duration-200 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-        </button>
-        <div class="faq-answer px-6 pb-5 pt-1 text-xs md:text-sm text-slate-600 leading-relaxed hidden border-t border-slate-100 bg-slate-50/50">
-          <p class="pt-3">${isKo ? faq.aKo : faq.aEn}</p>
-        </div>
-      </div>
-    `).join('');
-  }
-
-  window.toggleFaq = function(idx) {
-    const items = document.querySelectorAll('.faq-item');
-    if (items[idx]) {
-      const answer = items[idx].querySelector('.faq-answer');
-      const icon = items[idx].querySelector('.faq-icon');
-      const isHidden = answer.classList.contains('hidden');
-      
-      // Close all others
-      items.forEach(it => {
-        it.querySelector('.faq-answer')?.classList.add('hidden');
-        it.querySelector('.faq-icon')?.classList.remove('rotate-180');
-      });
-
-      if (isHidden) {
-        answer.classList.remove('hidden');
-        icon.classList.add('rotate-180');
-      }
-    }
-  };
-
-  // --------------------------------------------------------------------------
   // Interactive Quiz
   // --------------------------------------------------------------------------
   function initQuiz() {
@@ -745,38 +689,6 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   // --------------------------------------------------------------------------
-  // Contact Form
-  // --------------------------------------------------------------------------
-  function initContactForm() {
-    const form = document.getElementById('contact-form');
-    const toast = document.getElementById('contact-toast');
-    if (!form || !toast) return;
-
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const isKo = currentLang === 'ko';
-      const name = document.getElementById('contact-name')?.value;
-      
-      // Show Toast
-      toast.classList.remove('hidden');
-      toast.innerHTML = `
-        <div class="flex items-center gap-3">
-          <svg class="w-5 h-5 text-emerald-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-          <div>
-            <div class="font-bold text-xs">${isKo ? '메시지가 성공적으로 전송되었습니다!' : 'Thank you, your message has been sent!'}</div>
-            <div class="text-[11px] text-slate-500">${isKo ? `${name} 님의 문의가 접수되었습니다.` : `We received your inquiry, ${name}.`}</div>
-          </div>
-        </div>
-      `;
-
-      form.reset();
-      setTimeout(() => {
-        toast.classList.add('hidden');
-      }, 5000);
-    });
-  }
-
-  // --------------------------------------------------------------------------
   // Global Live Search
   // --------------------------------------------------------------------------
   function initSearch() {
@@ -843,17 +755,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       }
 
-      // Search FAQs
-      data.faqs.forEach(f => {
-        if (f.qEn.toLowerCase().includes(query) || f.qKo.toLowerCase().includes(query) || f.aEn.toLowerCase().includes(query)) {
-          results.push({
-            type: 'FAQ',
-            title: isKo ? f.qKo : f.qEn,
-            target: 'faq'
-          });
-        }
-      });
-
       // Render Dropdown
       if (results.length === 0) {
         searchResultsBox.innerHTML = `
@@ -893,8 +794,6 @@ document.addEventListener('DOMContentLoaded', () => {
     'comparison': 'comparison.html',
     'facts': 'facts.html',
     'quiz': 'quiz.html',
-    'faq': 'faq.html',
-    'contact': 'faq.html#contact',
     'home': 'index.html'
   };
 
