@@ -837,10 +837,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const video = document.getElementById('intro-video');
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     let isDismissed = false;
+    let playbackTimer = null;
 
     function finishIntro() {
       if (isDismissed) return;
       isDismissed = true;
+      if (playbackTimer) clearTimeout(playbackTimer);
       document.body.classList.remove('intro-active');
       overlay.classList.add('intro-dismissed');
       if (video) {
@@ -859,17 +861,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (video) {
       video.muted = true;
+      video.setAttribute('playsinline', '');
+      video.setAttribute('webkit-playsinline', '');
+
+      // Once actual playback starts, set a 5.3s safety fallback aligned with playback
+      video.addEventListener('playing', () => {
+        if (!playbackTimer) {
+          playbackTimer = setTimeout(finishIntro, 5300);
+        }
+      }, { once: true });
+
+      // Smoothly dismiss right when the video ends
+      video.addEventListener('ended', finishIntro, { once: true });
+
       const playPromise = video.play();
       if (playPromise !== undefined) {
-        playPromise.catch(() => {});
+        playPromise.catch(() => {
+          // Autoplay blocked (e.g., iOS Low Power Mode): don't freeze on frame 0
+          setTimeout(finishIntro, 800);
+        });
       }
-
-      // Smoothly dismiss once video finishes
-      video.addEventListener('ended', finishIntro);
     }
 
-    // Safety fallback: auto-finish at 5.2s
-    setTimeout(finishIntro, 5200);
+    // Hard safety fallback in case buffering stalls indefinitely on ultra-slow connections
+    setTimeout(finishIntro, 8500);
   }
 
   // Helper SVG Icons
