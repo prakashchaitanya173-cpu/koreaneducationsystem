@@ -597,6 +597,36 @@ Two takeaways from PISA stand out for economists. First, educational equity: in 
 지난 20년 동안 한국은 줄곧 OECD 최상위권을 유지해 왔습니다. 38개 OECD 회원국을 포함해 91개국 76만 명의 학생을 평가한 최신 PISA 2025 결과에서 한국은 과학 부문 526점(OECD 평균 482점)으로 OECD 국가 중 1~3위를 차지했습니다. 수학에서는 522점으로 OECD 1~2위를 기록했으며, 새롭게 도입된 '디지털 환경에서의 학습(Learning in the Digital World)' 평가에서도 한국 학생의 40% 이상이 최고 성취 수준에 도달하여 OECD 2~5위를 기록했습니다.
 
 경제학자와 교육학자들은 PISA 결과에서 두 가지 중요한 점에 주목합니다. 첫째는 '교육 형평성'입니다. 한국에서는 학생의 사회경제적 배경이 시험 점수에 미치는 영향이 OECD 평균보다 현저히 적어, 평범한 가정의 학생도 양질의 엄격한 공교육을 받습니다. 둘째로 PISA는 '조기 경보 시스템' 역할을 합니다. 읽기 점수가 2022년 대비 14점 하락하자, 교육 당국은 교실 내 비판적 독해력과 디지털 리터러시 강화를 위한 맞춤형 정책을 신속하게 추진하고 있습니다.`
+    },
+    {
+      id: 'fact-3',
+      titleEn: 'Education & Economic Development: Miracle on the Han River',
+      titleKo: '교육과 경제 발전: 한강의 기적',
+      icon: 'trending-up',
+      stat: '350× GDP',
+      statLabelEn: 'Per-Capita Growth',
+      statLabelKo: '1인당 GDP 성장',
+      image: 'assets/images/fact_education_fever.jpg',
+      imageAltEn: 'The modern illuminated skyline of Seoul along the Han River representing the Miracle on the Han River',
+      imageAltKo: '한강을 따라 펼쳐진 서울의 현대적 스카이라인과 한강의 기적',
+      descEn: `Now let’s connect the classroom to the economy—a transformation known globally as the 'Miracle on the Han River'. When the Korean War ended in 1953, South Korea had no natural resource wealth to export. Its leaders made a deliberate bet: instead of waiting for capital, they would invest in human capital, matching education policy step-by-step to each stage of economic development.
+
+First, in the 1950s, the government focused on universal primary education. Thanks to Hangul, basic literacy spread rapidly across rural and urban areas alike, creating a disciplined, trainable workforce ready for factory production.
+
+Second, in the 1960s and 1970s, as South Korea launched export-led industrialization in textiles, steel, shipbuilding, and electronics, it expanded vocational high schools and technical junior colleges. Instead of training only theorists, schools produced tens of thousands of skilled technicians and engineers who could operate modern machinery and absorb foreign industrial technology.
+
+Third, from the 1980s to today, as labor costs rose, South Korea pivoted toward higher education and massive research and development. Nearly 70% of young South Koreans pursued tertiary education—among the highest rates in the world—supplying world-leading conglomerates like Samsung, LG, and SK Hynix with engineers capable of dominating semiconductors, batteries, electric vehicles, and global digital culture.
+
+However, to understand the full picture, we must also acknowledge the human cost of this success. Intense competition to enter top 'SKY' universities created an exhausting culture of late-night private cram schools called hagwons, placing heavy financial stress on families and mental pressure on teenagers. Recognizing this, South Korea has recently begun shifting away from pure exam-memorization—introducing a High School Credit System so students can choose subjects aligned with their individual creativity and career goals.`,
+      descKo: `이제 교실에서의 배움이 국가 경제와 어떻게 연결되었는지 살펴보겠습니다. 이는 전 세계적으로 '한강의 기적'이라 불리는 대변혁입니다. 1953년 6·25 전쟁이 끝났을 때 한국에는 수출할 만한 천연자원이 전혀 없었습니다. 국가 지도자와 국민들은 자본이 모이기를 기다리는 대신 '인적 자본(Human Capital)'에 과감히 투자하기로 결단했고, 경제 발전 단계마다 교육 정책을 정밀하게 맞추어 나갔습니다.
+
+첫째, 1950년대 정부는 초등 의무교육 정착에 집중했습니다. 배우기 쉬운 한글 덕분에 농촌과 도시를 막론하고 기초 문해력이 급속히 확산되었고, 이는 공장 생산에 즉각 투입될 수 있는 근면하고 훈련된 노동력의 기반이 되었습니다.
+
+둘째, 1960~70년대 섬유·철강·조선·전자 등 수출 주도형 중화학 공업화가 본격화되자 직업고등학교(실업고)와 기술전문대학을 대폭 확충했습니다. 이론가에 머무는 대신 현대식 기계를 능숙하게 다루고 선진 기술을 빠르게 흡수할 수 있는 수만 명의 숙련 기술인과 엔지니어를 현장에 공급했습니다.
+
+셋째, 1980년대부터 현재까지 인건비 상승에 대응하여 고등교육 대중화와 대규모 R&D 연구개발 체제로 전환했습니다. 청년층의 약 70%가 대학에 진학하는 세계 최고 수준의 고등교육 이수율을 달성하며 삼성, LG, SK하이닉스 등 글로벌 대기업에 반도체·이차전지·전기차 및 디지털 문화를 선도할 최정예 인재를 지속적으로 공급했습니다.
+
+그러나 이 눈부신 성공의 이면에는 인간적 비용도 뒤따랐습니다. 'SKY' 명문대 진학을 둘러싼 치열한 입시 경쟁은 학원(Hagwon) 중심의 심야 사교육 문화를 낳았고, 가계의 재정 부담과 청소년의 정신적 압박을 가중시켰습니다. 이러한 문제점을 직시한 한국은 단순 암기식 입시 위주 교육에서 탈피하여, 학생들이 각자의 창의성과 진로에 맞추어 과목을 자율 선택하는 '고교학점제'를 도입하는 등 미래형 교육 개혁을 적극 추진하고 있습니다.`
     }
   ],
 
