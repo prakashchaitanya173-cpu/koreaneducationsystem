@@ -411,7 +411,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // --------------------------------------------------------------------------
-  // Suneung & Examinations Section
+  // Exams Section (Suneung, Civil Service, TOPIK)
   // --------------------------------------------------------------------------
   function renderSuneung() {
     const isKo = currentLang === 'ko';
@@ -758,7 +758,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'suneung csat exam 수능 대학수학능력시험 test schedule 엿 listening flight'.includes(query)
       ) {
         results.push({
-          type: isKo ? '시험 및 입시' : 'Examinations',
+          type: isKo ? '시험' : 'Exams',
           title: isKo ? '대학수학능력시험 (수능) & 내신' : 'Suneung (CSAT) & National Test Day',
           target: 'examinations'
         });
@@ -768,7 +768,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'topik topic 한국어능력시험 korean language proficiency niied levels'.includes(query)
       ) {
         results.push({
-          type: isKo ? '시험 및 입시' : 'Examinations',
+          type: isKo ? '시험' : 'Exams',
           title: isKo ? 'TOPIK (한국어능력시험) I·II 6등급 안내' : 'TOPIK (한국어능력시험) — Levels 1–6 Guide',
           target: 'topik'
         });
@@ -778,7 +778,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'grade 5 civil service psat 5급 공채 행정고시 기술고시 government administrative technical'.includes(query)
       ) {
         results.push({
-          type: isKo ? '시험 및 입시' : 'Examinations',
+          type: isKo ? '시험' : 'Exams',
           title: isKo ? '5급 공개경쟁채용시험 (PSAT·필기·면접)' : 'Grade 5 Civil Service Examination (PSAT)',
           target: 'civil-service'
         });
