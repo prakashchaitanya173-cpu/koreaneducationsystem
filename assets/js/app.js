@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   let activeStageId = 'kindergarten';
   let activeSuneungPeriod = 0;
+  let activeFactFilter = 'all';
   let currentQuizIndex = 0;
   let quizScore = 0;
   let selectedQuizAnswers = {};
@@ -530,71 +531,104 @@ document.addEventListener('DOMContentLoaded', () => {
   // --------------------------------------------------------------------------
   // Interesting Facts Section
   // --------------------------------------------------------------------------
+  window.filterFacts = function(filterId) {
+    activeFactFilter = filterId;
+    renderFacts();
+    document.querySelectorAll('.fact-tab-btn').forEach(btn => {
+      btn.classList.remove('bg-[#0F2B5C]', 'text-white', 'shadow-md');
+      btn.classList.add('bg-white', 'text-slate-700', 'hover:bg-slate-100', 'border', 'border-slate-200');
+    });
+    const activeBtn = document.getElementById('fact-tab-' + filterId);
+    if (activeBtn) {
+      activeBtn.classList.remove('bg-white', 'text-slate-700', 'hover:bg-slate-100', 'border-slate-200');
+      activeBtn.classList.add('bg-[#0F2B5C]', 'text-white', 'shadow-md');
+    }
+  };
+
   function renderFacts() {
     const container = document.getElementById('facts-container');
     if (!container) return;
     const isKo = currentLang === 'ko';
 
-    container.innerHTML = data.interestingFacts.map(fact => `
-      <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover-lift transition-all flex flex-col justify-between group">
-        <div>
-          ${fact.image ? `
-            <div class="relative h-48 w-full overflow-hidden bg-slate-900">
-              <img 
-                src="${fact.image}" 
-                alt="${isKo ? fact.imageAltKo : fact.imageAltEn}" 
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100"
-                loading="lazy"
-              />
-              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent pointer-events-none"></div>
-              
-              <!-- Stat Badge Overlay -->
-              <div class="absolute bottom-3 left-4 right-4 flex items-end justify-between text-white pointer-events-none">
-                <div>
-                  <span class="text-[11px] font-extrabold uppercase tracking-wider text-rose-300 drop-shadow-sm block mb-0.5">
-                    ${isKo ? fact.statLabelKo : fact.statLabelEn}
-                  </span>
-                  <span class="text-2xl sm:text-3xl font-black tracking-tight drop-shadow-md text-white">
-                    ${fact.stat}
+    const factsToShow = activeFactFilter === 'all'
+      ? data.interestingFacts
+      : data.interestingFacts.filter(f => f.id === activeFactFilter);
+
+    container.innerHTML = factsToShow.map((fact) => {
+      const topicNumber = data.interestingFacts.findIndex(f => f.id === fact.id) + 1;
+      return `
+        <article id="${fact.id}" class="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-lg hover:shadow-xl transition-all">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-0">
+            <!-- Left Side: Visual & Stat Banner -->
+            <div class="lg:col-span-5 relative bg-slate-900 flex flex-col justify-between min-h-[280px] lg:min-h-full">
+              <div class="relative h-72 sm:h-80 lg:h-full w-full overflow-hidden">
+                <img
+                  src="${fact.image}"
+                  alt="${isKo ? fact.imageAltKo : fact.imageAltEn}"
+                  class="w-full h-full object-cover opacity-90 transition-transform duration-700 hover:scale-105"
+                  loading="lazy"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/40 to-transparent"></div>
+                
+                <!-- Topic Index Badge on Image -->
+                <div class="absolute top-4 left-4 z-10">
+                  <span class="px-3.5 py-1.5 rounded-full bg-[#0F2B5C]/90 backdrop-blur-md text-white text-xs font-black border border-white/20 tracking-wider shadow">
+                    ${isKo ? `주제 ${topicNumber} / 3` : `Topic ${topicNumber} of 3`}
                   </span>
                 </div>
-                <div class="w-9 h-9 rounded-xl bg-white/20 backdrop-blur-md border border-white/30 text-white flex items-center justify-center shadow-lg">
-                  ${getIconSvg(fact.icon)}
+
+                <!-- Stat Overlay at Bottom of Image -->
+                <div class="absolute bottom-4 left-4 right-4 z-10 flex items-end justify-between text-white">
+                  <div>
+                    <span class="text-[11px] font-extrabold uppercase tracking-wider text-rose-300 drop-shadow block mb-0.5">
+                      ${isKo ? fact.statLabelKo : fact.statLabelEn}
+                    </span>
+                    <span class="text-3xl sm:text-4xl font-black tracking-tight drop-shadow-md text-white">
+                      ${fact.stat}
+                    </span>
+                  </div>
+                  <div class="w-12 h-12 rounded-2xl bg-white/20 backdrop-blur-md border border-white/30 text-white flex items-center justify-center shadow-lg">
+                    ${getIconSvg(fact.icon)}
+                  </div>
                 </div>
               </div>
             </div>
-          ` : `
-            <div class="p-6 pb-0 flex items-center justify-between mb-4">
-              <span class="text-3xl font-black text-[#0F2B5C] tracking-tight">${fact.stat}</span>
-              <div class="w-10 h-10 rounded-xl bg-red-50 text-[#D82B38] flex items-center justify-center">
-                ${getIconSvg(fact.icon)}
+
+            <!-- Right Side: Extensive Narrative Body -->
+            <div class="lg:col-span-7 p-6 sm:p-8 lg:p-10 flex flex-col justify-between bg-white">
+              <div>
+                <div class="flex items-center gap-2 mb-3">
+                  <span class="text-xs font-extrabold uppercase tracking-wider text-[#D82B38] bg-rose-50 px-3 py-1 rounded-full border border-rose-200">
+                    ${isKo ? `핵심 주제 0${topicNumber}` : `Core Pillar 0${topicNumber}`}
+                  </span>
+                  <span class="text-xs text-slate-500 font-semibold">
+                    ${isKo ? '심층 교육 분석' : 'In-Depth Analysis'}
+                  </span>
+                </div>
+
+                <h3 class="text-xl sm:text-2xl lg:text-3xl font-black text-[#0F2B5C] mb-5 leading-tight">
+                  ${isKo ? fact.titleKo : fact.titleEn}
+                </h3>
+
+                <div class="text-xs sm:text-sm text-slate-700 leading-relaxed space-y-3.5">
+                  ${(isKo ? fact.descKo : fact.descEn).split('\n\n').map(p => `<p class="leading-relaxed">${p}</p>`).join('')}
+                </div>
               </div>
-            </div>
-          `}
-          <div class="p-6">
-            <h4 class="text-base sm:text-lg font-bold text-slate-900 group-hover:text-[#0F2B5C] transition-colors mb-3 leading-snug">
-              ${isKo ? fact.titleKo : fact.titleEn}
-            </h4>
-            <div class="text-xs sm:text-sm text-slate-600 leading-relaxed space-y-3">
-              ${(isKo ? fact.descKo : fact.descEn).split('\n\n').map(p => `<p>${p}</p>`).join('')}
+
+              <div class="mt-8 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+                <span class="flex items-center gap-1.5 text-emerald-700 font-bold">
+                  <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                  ${isKo ? '검증된 국가 교육 성과' : 'Verified Educational Milestone'}
+                </span>
+                <span class="text-slate-400 font-mono text-[11px]">#Pillar${topicNumber}</span>
+              </div>
             </div>
           </div>
-        </div>
-
-        <div class="px-6 pb-5 pt-0 border-t border-slate-100 flex items-center justify-between text-[11px] font-semibold text-slate-500">
-          <span class="flex items-center gap-1.5 text-emerald-700">
-            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
-            ${isKo ? '공식 교육 지표' : 'Verified Metric'}
-          </span>
-          <span class="text-slate-400 font-mono text-[10px]">#Facts</span>
-        </div>
-      </div>
-    `).join('');
+        </article>
+      `;
+    }).join('');
   }
 
-  // --------------------------------------------------------------------------
-  // Interactive Quiz
-  // --------------------------------------------------------------------------
   function initQuiz() {
     currentQuizIndex = 0;
     quizScore = 0;

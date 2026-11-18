@@ -177,17 +177,36 @@
       </div>
 
       <!-- Facts Grid Header -->
-      <div class="text-center max-w-2xl mx-auto mb-10">
+      <div class="text-center max-w-3xl mx-auto mb-6">
         <span class="text-xs font-bold uppercase tracking-wider text-emerald-800 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200">
-          Global Metrics &amp; Benchmarks
+          Three Flagship Pillars
         </span>
-        <h2 class="text-2xl sm:text-3xl font-extrabold text-[#0F2B5C] mt-3">
+        <h2 class="text-2xl sm:text-4xl font-black text-[#0F2B5C] mt-3 tracking-tight">
           Key Benchmarks: Literacy, PISA &amp; Economic Development
         </h2>
+        <p class="text-slate-600 text-xs sm:text-sm mt-2 max-w-2xl mx-auto">
+          Explore South Korea's three foundational educational pillars one by one, from King Sejong's Hangul to OECD PISA mastery and the Miracle on the Han River.
+        </p>
       </div>
 
-      <!-- Dynamic Facts Cards Grid (Rendered by app.js) -->
-      <div id="facts-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16"></div>
+      <!-- Topic Switcher Tabs (One by One Navigator) -->
+      <div class="flex flex-wrap items-center justify-center gap-2.5 mb-10 max-w-4xl mx-auto">
+        <button onclick="window.filterFacts('all')" id="fact-tab-all" class="fact-tab-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all shadow-md bg-[#0F2B5C] text-white">
+          <span data-en="All Topics (One by One)" data-ko="전체 주제 순서대로 보기">All Topics (One by One)</span>
+        </button>
+        <button onclick="window.filterFacts('fact-1')" id="fact-tab-fact-1" class="fact-tab-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all bg-white text-slate-700 hover:bg-slate-100 border border-slate-200">
+          <span data-en="1. Universal Literacy &amp; Hangul" data-ko="1. 문해력과 한글 창제">1. Universal Literacy &amp; Hangul</span>
+        </button>
+        <button onclick="window.filterFacts('fact-2')" id="fact-tab-fact-2" class="fact-tab-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all bg-white text-slate-700 hover:bg-slate-100 border border-slate-200">
+          <span data-en="2. OECD PISA Excellence" data-ko="2. OECD PISA 성취도">2. OECD PISA Excellence</span>
+        </button>
+        <button onclick="window.filterFacts('fact-3')" id="fact-tab-fact-3" class="fact-tab-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all bg-white text-slate-700 hover:bg-slate-100 border border-slate-200">
+          <span data-en="3. Economic Development" data-ko="3. 경제 발전 (한강의 기적)">3. Economic Development</span>
+        </button>
+      </div>
+
+      <!-- Sequential Facts Showcase (Rendered One by One by app.js) -->
+      <div id="facts-container" class="space-y-12 max-w-5xl mx-auto mb-16"></div>
 
       <!-- Historical Transformation Deep Dive -->
       <div class="bg-white rounded-2xl border border-slate-200 p-8 shadow-md mb-16">
@@ -337,7 +356,7 @@
     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
   </button>
 
-  <script src="assets/js/data.js?v=12"></script>
-  <script src="assets/js/app.js?v=12"></script>
+  <script src="assets/js/data.js?v=13"></script>
+  <script src="assets/js/app.js?v=13"></script>
 </body>
 </html>
