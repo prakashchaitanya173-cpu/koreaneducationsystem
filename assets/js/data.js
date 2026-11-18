@@ -556,8 +556,8 @@ window.KOREAN_EDU_DATA = {
   interestingFacts: [
     {
       id: 'fact-1',
-      titleEn: '99%+ Universal Literacy & Hangul Literary Heritage',
-      titleKo: '99% 이상 세계 최고 문해율과 한글 문학 전통',
+      titleEn: '99%+ Universal Literacy & The Invention of Hangul',
+      titleKo: '99% 이상 세계 최고 문해율과 과학적 훈민정음',
       icon: 'sparkles',
       stat: '99%+',
       statLabelEn: 'Adult Literacy Rate',
@@ -565,8 +565,16 @@ window.KOREAN_EDU_DATA = {
       image: 'assets/images/fact_literacy_hangul.jpg',
       imageAltEn: 'Statue of King Sejong the Great and Hangul calligraphy in Seoul celebrating universal literacy and literature',
       imageAltKo: '광화문 광장의 세종대왕 동상과 한글 창제 및 한국 문학 상징',
-      descEn: 'In 1945 following liberation, roughly 78% of Koreans were illiterate. Today South Korea maintains over 99% adult literacy—the highest tier in the world. This literacy miracle rests on King Sejong\'s 1443 phonetic Hangul alphabet (Hunminjeongeum), designed with scientific precision so consonants reflect the shape of vocal speech organs and can be learned in hours. Hangul unlocked universal education, democratized literary expression, and nurtured a rich literary heritage spanning classical Sijo poetry, pansori narrative verse, and celebrated modern Korean literature and translation.',
-      descKo: '1945년 광복 직후 약 78%에 달했던 문맹률을 극복하고 현재 99% 이상의 세계 최고 수준 문해율을 달성했습니다. 발음 기관의 모양을 과학적으로 본뜬 1443년 세종대왕의 훈민정음(한글) 창제 덕분에 누구나 반나절이면 글을 깨칠 수 있었으며, 이는 전 국민 의무교육과 결합해 고전 시조부터 현대 소설과 시에 이르는 풍부한 한국 문학의 토대를 완성했습니다.'
+      descEn: `Every educational miracle starts with one basic requirement: people must be able to read and write. Before the 15th century, Koreans wrote using Hanja—Classical Chinese characters. Because Hanja required memorizing thousands of complex symbols, only wealthy aristocrats and scholars could afford the time to learn it. Ordinary farmers and workers were locked out of literacy and social mobility.
+
+In 1443, King Sejong the Great changed history by inventing Hangul, officially publishing it in 1446 in a manual called Hunminjeongeum, meaning 'The Correct Sounds for the Instruction of the People'. Linguists consider Hangul one of the most scientifically designed writing systems ever created. Its consonants are actually shaped like the human vocal organs—the tongue, lips, teeth, and throat—when you pronounce each sound, while its vowels are built from simple philosophical lines representing heaven, earth, and humanity. Today, modern South Korean Hangul relies on just 24 basic letters—14 consonants and 10 vowels—grouped neatly into syllable blocks.
+
+One of Sejong's scholars famously wrote that 'a wise man can acquaint himself with them before the morning is over; even a stupid man can learn them in the space of ten days'. Although traditional elites resisted Hangul and Japanese colonial rule even tried to ban it in the 20th century, Hangul survived as a symbol of national identity. After independence, its simplicity enabled South Korea to achieve near-100% literacy in record time—and in the digital age, its block structure makes Hangul one of the fastest languages to type on computers and smartphones.`,
+      descKo: `모든 교육의 기적은 '읽고 쓰는 능력'이라는 가장 근본적인 조건에서 시작됩니다. 15세기 이전 한반도에서는 수천 자의 복잡한 한자(Hanja)를 사용했기에, 시간과 재력이 있는 양반 귀족과 학자들만이 글을 배울 수 있었고 대다수 농민과 서민들은 배움과 신분 상승의 기회에서 소외되었습니다.
+
+1443년, 세종대왕은 백성을 사랑하는 마음으로 한글을 창제하고 1446년 '백성을 가르치는 바른 소리'라는 뜻의 《훈민정음(訓民正音)》을 반포하며 역사를 바꾸었습니다. 언어학자들은 한글을 인류 역사상 가장 과학적인 문자 체계로 평가합니다. 자음은 혀, 입술, 이, 목구멍 등 발음 기관의 모양을 정밀하게 본떠 만들었으며, 모음은 하늘·땅·사람(천지인)의 철학적 원리를 담았습니다. 오늘날 한국어는 단 24개의 기본 글자(자음 14자, 모음 10자)를 음절 단위 네모 틀로 조합하여 무한한 소리를 표기합니다.
+
+당시 정인지 학자는 '지혜로운 자는 아침나절이 지나기 전에 배우고, 어리석은 자라도 열흘이면 깨칠 수 있다'고 기록했습니다. 초기 지배층의 반발과 일제강점기의 탄압 속에서도 한글은 민족의 정체성을 지키며 살아남았습니다. 광복 후 한글의 뛰어난 학습 용이성 덕분에 한국은 전례 없는 최단기간에 100%에 가까운 문해율을 달성했으며, 현대 디지털 시대에는 음절 블록 구조 덕분에 컴퓨터와 스마트폰에서 세계에서 가장 빠른 입력을 가능하게 하고 있습니다.`
     },
     {
       id: 'fact-2',
@@ -579,8 +587,12 @@ window.KOREAN_EDU_DATA = {
       image: 'assets/images/fact_pisa_excellence.jpg',
       imageAltEn: 'Korean high school students studying advanced mathematics and science with focus',
       imageAltKo: '수학 및 과학 문제 해결에 몰입하는 한국 고등학생들의 학업 성취',
-      descEn: 'Across OECD\'s triennial Programme for International Student Assessment (PISA) benchmarks—evaluating 15-year-olds across 81 participating economies (PISA 2022)—South Korea consistently ranks among the world\'s top 5 nations in Mathematics, Reading Literacy, and Science. Korean students excel in complex textual interpretation, critical reading, and creative problem solving. Furthermore, PISA data reveals one of the narrowest performance gaps between disadvantaged and advantaged students, proving that Korea combines top-tier academic rigor with high nationwide educational equity.',
-      descKo: '전 세계 81개국이 참가한 OECD PISA(국제 학업성취도 평가, 2022년 기준)에서 한국 만 15세 학생들은 수학, 읽기 문해력(Reading Literacy), 과학 및 창의적 문제해결력 전 부문에서 세계 최상위 5위권을 확고히 지켰습니다. 특히 사회경제적 배경에 따른 학력 격차가 OECD 회원국 중 가장 낮은 축에 속하여, 최고 수준의 수월성과 교육 기회의 균등을 동시에 입증하고 있습니다.'
+      descEn: `Across OECD's triennial Programme for International Student Assessment (PISA) benchmarks—evaluating 15-year-olds across 81 participating economies in PISA 2022—South Korea consistently ranks among the top 5 nations in Mathematics, Reading Literacy, and Science. Korean students excel in complex textual interpretation, advanced mathematical reasoning, and creative problem solving.
+
+Remarkably, OECD data reveals that Korea maintains one of the narrowest performance gaps between disadvantaged and advantaged students of any developed nation. Combined with universal high school graduation and public school teacher rotation, Korea demonstrates that academic excellence and nationwide educational equity can be achieved together.`,
+      descKo: `전 세계 81개국이 참가한 OECD PISA(국제 학업성취도 평가, 2022년 기준)에서 한국 만 15세 학생들은 수학, 읽기 문해력(Reading Literacy), 과학 및 창의적 문제해결력 전 부문에서 세계 최상위 5위권을 확고히 지켰습니다. 특히 복잡한 비문학 독해와 고난도 수학적 추론 역량에서 탁월한 성취를 보입니다.
+
+더욱 주목할 점은 사회경제적 배경에 따른 학력 격차가 OECD 회원국 중 가장 낮은 축에 속한다는 사실입니다. 전국 고교 무상교육과 교원 5년 주기 순환근무제가 뒷받침되어, 수월성과 교육 기회의 균등을 동시에 달성한 세계적 모범 사례로 꼽힙니다.`
     }
   ],
 

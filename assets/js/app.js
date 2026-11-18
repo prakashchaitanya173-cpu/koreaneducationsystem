@@ -572,12 +572,12 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
           `}
           <div class="p-6">
-            <h4 class="text-base sm:text-lg font-bold text-slate-900 group-hover:text-[#0F2B5C] transition-colors mb-2 leading-snug">
+            <h4 class="text-base sm:text-lg font-bold text-slate-900 group-hover:text-[#0F2B5C] transition-colors mb-3 leading-snug">
               ${isKo ? fact.titleKo : fact.titleEn}
             </h4>
-            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
-              ${isKo ? fact.descKo : fact.descEn}
-            </p>
+            <div class="text-xs sm:text-sm text-slate-600 leading-relaxed space-y-3">
+              ${(isKo ? fact.descKo : fact.descEn).split('\n\n').map(p => `<p>${p}</p>`).join('')}
+            </div>
           </div>
         </div>
 
