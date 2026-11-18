@@ -578,21 +578,25 @@ One of Sejong's scholars famously wrote that 'a wise man can acquaint himself wi
     },
     {
       id: 'fact-2',
-      titleEn: 'Consistent Global OECD PISA Top 5 Leader (Math & Reading)',
-      titleKo: 'OECD PISA 읽기·수학·과학 세계 최상위',
+      titleEn: 'OECD PISA World-Class Leader (Science, Math & Digital)',
+      titleKo: 'OECD PISA 과학·수학·디지털 세계 최상위',
       icon: 'trophy',
-      stat: 'Top 5',
-      statLabelEn: 'OECD PISA Worldwide',
-      statLabelKo: 'OECD 학업성취도',
+      stat: 'Top 1–3',
+      statLabelEn: 'PISA OECD Rank',
+      statLabelKo: 'OECD PISA 순위',
       image: 'assets/images/fact_pisa_excellence.jpg',
       imageAltEn: 'Korean high school students studying advanced mathematics and science with focus',
       imageAltKo: '수학 및 과학 문제 해결에 몰입하는 한국 고등학생들의 학업 성취',
-      descEn: `Across OECD's triennial Programme for International Student Assessment (PISA) benchmarks—evaluating 15-year-olds across 81 participating economies in PISA 2022—South Korea consistently ranks among the top 5 nations in Mathematics, Reading Literacy, and Science. Korean students excel in complex textual interpretation, advanced mathematical reasoning, and creative problem solving.
+      descEn: `Having a simple alphabet gets people reading, but how do we know South Korea's schools actually produce world-class thinkers? For that, we look at PISA—the Programme for International Student Assessment run by the OECD, which tests 15-year-old students across dozens of countries in Mathematics, Science, and Reading.
 
-Remarkably, OECD data reveals that Korea maintains one of the narrowest performance gaps between disadvantaged and advantaged students of any developed nation. Combined with universal high school graduation and public school teacher rotation, Korea demonstrates that academic excellence and nationwide educational equity can be achieved together.`,
-      descKo: `전 세계 81개국이 참가한 OECD PISA(국제 학업성취도 평가, 2022년 기준)에서 한국 만 15세 학생들은 수학, 읽기 문해력(Reading Literacy), 과학 및 창의적 문제해결력 전 부문에서 세계 최상위 5위권을 확고히 지켰습니다. 특히 복잡한 비문학 독해와 고난도 수학적 추론 역량에서 탁월한 성취를 보입니다.
+Consistently over the last two decades, South Korea has sat near the very top of the OECD rankings. In the latest PISA 2025 results, which assessed 760,000 students across 91 economies including all 38 OECD member nations, South Korea ranked among the top one to three OECD countries in Science with a score of 526 against an OECD average of 482. In Mathematics, it placed first or second among OECD members with 522. And in PISA's newly introduced Learning in the Digital World assessment, over two in five Korean students reached the highest proficiency levels, placing Korea between second and fifth in the OECD.
 
-더욱 주목할 점은 사회경제적 배경에 따른 학력 격차가 OECD 회원국 중 가장 낮은 축에 속한다는 사실입니다. 전국 고교 무상교육과 교원 5년 주기 순환근무제가 뒷받침되어, 수월성과 교육 기회의 균등을 동시에 달성한 세계적 모범 사례로 꼽힙니다.`
+Two takeaways from PISA stand out for economists. First, educational equity: in South Korea, a student's socioeconomic background explains less variation in test scores than the OECD average, meaning even students from modest families receive rigorous schooling. Second, PISA also acts as an early warning system—Korea's reading score dipped by 14 points compared to 2022, prompting policymakers to actively strengthen critical reading and digital literacy in classrooms.`,
+      descKo: `단순하고 과학적인 문자가 전 국민의 읽기를 가능하게 했다면, 한국 학교가 실제로 세계 최고 수준의 사고력을 기르고 있는지는 어떻게 입증할 수 있을까요? 그 해답은 OECD가 주관하여 전 세계 수십 개국의 만 15세 학생들을 대상으로 수학·과학·읽기를 평가하는 국제학업성취도평가(PISA)에서 찾을 수 있습니다.
+
+지난 20년 동안 한국은 줄곧 OECD 최상위권을 유지해 왔습니다. 38개 OECD 회원국을 포함해 91개국 76만 명의 학생을 평가한 최신 PISA 2025 결과에서 한국은 과학 부문 526점(OECD 평균 482점)으로 OECD 국가 중 1~3위를 차지했습니다. 수학에서는 522점으로 OECD 1~2위를 기록했으며, 새롭게 도입된 '디지털 환경에서의 학습(Learning in the Digital World)' 평가에서도 한국 학생의 40% 이상이 최고 성취 수준에 도달하여 OECD 2~5위를 기록했습니다.
+
+경제학자와 교육학자들은 PISA 결과에서 두 가지 중요한 점에 주목합니다. 첫째는 '교육 형평성'입니다. 한국에서는 학생의 사회경제적 배경이 시험 점수에 미치는 영향이 OECD 평균보다 현저히 적어, 평범한 가정의 학생도 양질의 엄격한 공교육을 받습니다. 둘째로 PISA는 '조기 경보 시스템' 역할을 합니다. 읽기 점수가 2022년 대비 14점 하락하자, 교육 당국은 교실 내 비판적 독해력과 디지털 리터러시 강화를 위한 맞춤형 정책을 신속하게 추진하고 있습니다.`
     }
   ],
 
