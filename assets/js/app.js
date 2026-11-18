@@ -774,6 +774,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       }
 
+      if (
+        'grade 5 civil service psat 5급 공채 행정고시 기술고시 government administrative technical'.includes(query)
+      ) {
+        results.push({
+          type: isKo ? '시험 및 입시' : 'Examinations',
+          title: isKo ? '5급 공개경쟁채용시험 (PSAT·필기·면접)' : 'Grade 5 Civil Service Examination (PSAT)',
+          target: 'civil-service'
+        });
+      }
+
       // Search School Life
       data.schoolLife.forEach(item => {
         if (
@@ -849,6 +859,7 @@ document.addEventListener('DOMContentLoaded', () => {
     'education-structure': 'structure.html',
     'school-life': 'school-life.html',
     'examinations': 'examinations.html',
+    'civil-service': 'examinations.html#civil-service',
     'topik': 'examinations.html#topik',
     'comparison': 'comparison.html',
     'facts': 'facts.html',

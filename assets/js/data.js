@@ -362,72 +362,42 @@ window.KOREAN_EDU_DATA = {
   suneung: {
     titleEn: 'The College Scholastic Ability Test (수능 – Suneung)',
     titleKo: '대학수학능력시험 (수능 – Suneung)',
-    subtitleEn: 'South Korea\'s Monumental National University Entrance Examination',
-    subtitleKo: '대한민국 수험생의 12년 학업을 결산하는 국가 대표 시험',
-    introEn: 'Held annually on the third Thursday of November, the Suneung (CSAT) is one of the most rigorously managed standardized examinations in the world. Over 500,000 candidates sit the 8-hour marathon simultaneously while an entire nation pauses flights, commutes, and military drills to support them.',
-    introKo: '매년 11월 셋째 주 목요일에 치러지는 대학수학능력시험은 약 50만 명의 수험생이 동시에 응시하는 8시간 마라톤 시험으로, 전 국민과 정부 기관이 수험생을 위해 하나로 뭉칩니다.',
+    subtitleEn: 'South Korea\'s National University Entrance Examination',
+    subtitleKo: '대한민국 대학 입학 대표 국가 시험',
+    introEn: 'Held annually on the third Thursday of November, the Suneung (CSAT) is South Korea\'s 1-day university entrance exam taken by ~500,000 candidates nationwide.',
+    introKo: '매년 11월 셋째 주 목요일에 치러지는 대학수학능력시험(수능)은 약 50만 명이 응시하는 하루짜리 대입 국가 시험입니다.',
     nationalMeasuresEn: [
       {
         icon: 'plane',
-        title: 'Nationwide No-Fly Window (35 Minutes)',
-        desc: 'From 13:05 to 13:40 during the English listening exam, all commercial aircraft takeoffs and landings across South Korea are strictly grounded, and airborne planes must stay above 3,000 meters.'
+        title: '35-Minute Nationwide No-Fly Window',
+        desc: 'All aircraft takeoffs and landings are halted nationwide during the afternoon English listening exam (13:05–13:40) to ensure complete silence.'
       },
       {
         icon: 'shield-alert',
-        title: 'Police Motorcycle & Patrol Escorts',
-        desc: 'Thousands of police officers, siren-equipped patrol cars, and volunteer motorbike clubs wait at subway exits to rush late or lost candidates directly to their exam gates before the strict 08:10 lock-in.'
-      },
-      {
-        icon: 'building-2',
-        title: 'Delayed Commutes & Stock Market',
-        desc: 'Government offices, banks, major corporations, and the Korea Exchange (KRX) delay opening by 1 hour (to 10:00 AM), while cities deploy extra early-morning subway trains and buses.'
-      },
-      {
-        icon: 'lock',
-        title: '40-Day Isolated Question-Writing Lock-In',
-        desc: 'Around 500 university professors and top teachers are secretly sequestered at an undisclosed resort for over a month with zero phones, zero internet, and guarded waste disposal until the exam finishes.'
-      },
-      {
-        icon: 'building-2',
-        title: '200-Meter Silence & No-Construction Zones',
-        desc: 'All construction work, sirens, bus honking, and military artillery drills near 1,200+ exam venues are strictly halted so students can read dense passages in undisturbed silence.'
+        title: 'Police Escorts & Delayed Commutes',
+        desc: 'Offices and the stock market delay opening by 1 hour to 10:00 AM, while police motorcycles rush delayed students to test gates.'
       },
       {
         icon: 'heart',
-        title: 'Dawn Cheering, Prayers & Sticky Rice Cakes',
-        desc: 'Parents gather at Buddhist temples, churches, and cathedrals for 100-day prayers (백일기도), while families gift sticky Yeot taffy and warm thermoses symbolizing "sticking" to one\'s dream university.'
+        title: 'Strict Security & Good-Luck Traditions',
+        desc: 'Exam writers stay isolated for over a month, while families gift sticky Yeot taffy (엿) symbolizing "sticking" (passing) to a dream university.'
       }
     ],
     nationalMeasuresKo: [
       {
         icon: 'plane',
-        title: '영어 듣기평가 35분간 전국 항공기 운항 통제',
-        desc: '오후 1시 5분부터 40분까지 전국 모든 공항의 비행기 이착륙이 전면 금지되며, 비행 중인 항공기도 상공 3,000m 이상을 유지해야 합니다.'
+        title: '영어 듣기평가 35분간 항공기 통제',
+        desc: '오후 영어 듣기평가 시간(13:05~13:40) 동안 전국 모든 공항의 비행기 이착륙이 전면 중단됩니다.'
       },
       {
         icon: 'shield-alert',
-        title: '경찰 싸이카 및 긴급 수송 작전',
-        desc: '오전 8시 10분 입실 마감에 쫓기는 수험생을 위해 전국 주요 지하철역에 경찰 순찰차, 싸이카 및 모범운전자 차량이 대기하여 긴급 호송합니다.'
-      },
-      {
-        icon: 'building-2',
-        title: '출근 시간 및 주식시장 개장 1시간 연기',
-        desc: '관공서·은행·대기업·한국거래소(KRX)의 출근 및 개장이 오전 10시로 1시간 연기되며, 새벽 대중교통이 집중 증편 배차됩니다.'
-      },
-      {
-        icon: 'lock',
-        title: '출제위원 500여 명의 40일간 완벽 합숙 보안',
-        desc: '대학교수와 일선 교사로 구성된 출제·검토위원 약 500명이 한 달 이상 비밀 시설에 격리되어 휴대전화·인터넷이 완전 차단된 상태로 문항을 출제합니다.'
-      },
-      {
-        icon: 'building-2',
-        title: '시험장 반경 200m 소음·공사 전면 금지',
-        desc: '전국 1,200여 개 시험장 인근의 공사, 경적, 군사 포사격 훈련이 전면 중단되어 수험생들이 완벽한 정숙 속에서 시험에 집중할 수 있습니다.'
+        title: '경찰 긴급 수송 및 출근 1시간 연기',
+        desc: '관공서와 주식시장 개장이 오전 10시로 늦춰지며, 경찰 싸이카가 지각 위기 수험생을 시험장까지 호송합니다.'
       },
       {
         icon: 'heart',
-        title: '학부모 백일기도와 합격 기원 엿 선물',
-        desc: '학부모들은 사찰·성당·교회에서 합격을 기원하고, 가족과 지인은 대학에 찰떡같이 "붙으라"는 의미의 엿과 찹쌀떡, 따뜻한 도시락을 정성껏 준비합니다.'
+        title: '철저한 합숙 보안 및 합격 기원 엿',
+        desc: '출제위원들이 한 달 이상 격리 출제하며, 가족과 지인은 대학에 찰떡같이 "붙으라"는 엿과 찹쌀떡을 선물합니다.'
       }
     ],
     schedule: [
@@ -436,63 +406,51 @@ window.KOREAN_EDU_DATA = {
         time: '08:40 – 10:00 (80 min)',
         subjectEn: 'Korean Language (국어)',
         subjectKo: '국어 영역 (공통+선택)',
-        qCount: '45 Questions • Relative (9-Grade)',
-        descEn: 'Common section (Reading & Literature – 34 Qs) + Choice of Speech & Writing (화법과 작문) or Language & Media (언어와 매체 – 11 Qs). Famous for dense philosophy, law, and science passages.',
-        descKo: '공통(독서·문학 34문항) + 선택(화법과 작문 또는 언어와 매체 11문항). 고난도 철학·법학·과학 비문학 지문 독해력이 핵심입니다.'
+        qCount: '45 Questions'
       },
       {
         period: 'Period 2 (2교시)',
         time: '10:30 – 12:10 (100 min)',
         subjectEn: 'Mathematics (수학)',
         subjectKo: '수학 영역 (공통+선택)',
-        qCount: '30 Questions • Relative (9-Grade)',
-        descEn: 'Common section (Math I & II – 22 Qs) + Choice of Probability & Statistics, Calculus (미적분), or Geometry (기하 – 8 Qs). Includes 9 short-answer grid-in questions with zero guessing odds.',
-        descKo: '공통(수학Ⅰ·Ⅱ 22문항) + 선택(확률과 통계, 미적분, 기하 중 택1, 8문항). 주관식 단답형 9문항이 포함되어 높은 수학적 추론력을 요구합니다.'
+        qCount: '30 Questions'
       },
       {
         period: 'Lunch (점심시간)',
         time: '12:10 – 13:00 (50 min)',
-        subjectEn: 'Lunch Break & Mental Reset',
+        subjectEn: 'Lunch Break (Home Bento)',
         subjectKo: '도시락 점심 식사 및 휴식',
-        qCount: '50 Min Rest',
-        descEn: 'Candidates eat warm home-cooked thermos lunches (usually light, easy-to-digest porridge, soup, and mild side dishes) at their desks and review English vocabulary.',
-        descKo: '수험생들은 소화가 잘되는 따뜻한 보온 도시락(죽, 부드러운 반찬 등)을 교실 자리에서 식사하며 오후 영어 듣기평가를 대비합니다.'
+        qCount: '50 Min Rest'
       },
       {
         period: 'Period 3 (3교시)',
         time: '13:10 – 14:20 (70 min)',
-        subjectEn: 'English (영어 – Incl. 17 Listening Qs)',
+        subjectEn: 'English (Incl. 17 Listening Qs)',
         subjectKo: '영어 영역 (듣기평가 17문항 포함)',
-        qCount: '45 Questions • Absolute (≥90 = Grade 1)',
-        descEn: 'Opens with the 25-minute nationwide No-Fly Listening section (17 Qs), followed by 28 advanced academic reading comprehension items. Graded on an absolute 10-point bracket scale.',
-        descKo: '전국 항공기가 통제되는 25분간의 듣기평가(17문항) 후 고난도 영문 독해 28문항을 풉니다. 90점 이상이면 1등급을 받는 절대평가 방식입니다.'
+        qCount: '45 Questions • Absolute'
       },
       {
         period: 'Period 4 (4교시)',
         time: '14:50 – 16:37 (107 min)',
-        subjectEn: 'Korean History & 2 Inquiry Electives',
-        subjectKo: '한국사(필수) 및 탐구 2과목(사탐/과탐/직탐)',
-        qCount: '20 + 40 Questions',
-        descEn: 'Mandatory Korean History (30 min, Absolute ≥40/50 = Grade 1) followed by two 30-minute Inquiry subjects chosen from 17 Social Studies (Economics, Law, Ethics, Geography) or Science (Physics, Chemistry, Biology, Earth Science) options.',
-        descKo: '필수 한국사(30분, 40점 이상 1등급 절대평가) 응시 후 사회탐구 9과목·과학탐구 8과목 중 최대 2과목을 선택해 각 30분씩 치릅니다.'
+        subjectEn: 'Korean History & 2 Inquiry Subjects',
+        subjectKo: '한국사(필수) 및 탐구 2과목',
+        qCount: '20 + 40 Questions'
       },
       {
         period: 'Period 5 (5교시)',
         time: '17:05 – 17:45 (40 min)',
-        subjectEn: 'Second Foreign Language / Classical Chinese (Optional)',
+        subjectEn: 'Second Foreign Language / Hanja (Optional)',
         subjectKo: '제2외국어 / 한문 영역 (선택)',
-        qCount: '30 Questions • Absolute',
-        descEn: 'Optional absolute-graded test across 9 languages: German, French, Spanish, Chinese, Japanese, Russian, Arabic, Vietnamese, or Classical Chinese (한문).',
-        descKo: '독일어, 프랑스어, 스페인어, 중국어, 일본어, 러시아어, 아랍어, 베트남어, 한문 중 희망 수험생이 선택 응시하는 절대평가 영역입니다.'
+        qCount: '30 Questions • Optional'
       }
     ],
     admissionsSplitEn: {
-      susie: 'Susie (수시 – Early Rolling Admission, ~78% of nationwide seats): Applications open in September before the Suneung (up to 6 university applications allowed). Divided into Student Record GPA Track (학생부교과), Holistic Portfolio Track (학생부종합 – reviewing essays, club research, teacher narratives & interviews), Essay Exam Track (논술), and Talent/Athletics Track. Many top universities still require a Suneung Minimum Grade Threshold (수능 최저학력기준) to finalize admission.',
-      jeongsi: 'Jeongsi (정시 – Regular CSAT Admission, ~22% of nationwide seats, ~40% at elite Seoul universities): Applications open in late December after official Suneung scorecards arrive. Candidates submit up to 3 strategic applications—one each in Admissions Groups Ga (가군), Na (나군), and Da (다군)—evaluated almost purely on Suneung Standard Scores (표준점수), Percentiles (백분위), and university-specific subject weightings.'
+      susie: 'Susie (수시 – Early Rolling, ~78%): Evaluates 3-year high school grades (Naeshin), student records, essays, and interviews.',
+      jeongsi: 'Jeongsi (정시 – Regular CSAT, ~22%): Based primarily on national Suneung standard scores and percentiles.'
     },
     admissionsSplitKo: {
-      susie: '수시모집 (전국 정원의 약 78% 선발): 수능 전 9월에 최대 6회 지원 가능하며, 내신 성적 중심의 학생부교과전형, 탐구·독서·세특·면접을 종합 평가하는 학생부종합전형(학종), 대학별 논술전형 및 실기전형으로 나뉩니다. 상당수 주요 대학은 최종 합격을 위해 "수능 최저학력기준" 충족을 요구합니다.',
-      jeongsi: '정시모집 (전국 약 22%, 서울 주요 16개 대학은 약 40% 선발): 12월 수능 성적표 발표 후 가·나·다군별로 각 1개 대학씩 총 3회 지원합니다. 수능 표준점수, 백분위, 대학별 영역 가중치를 중심으로 객관적·정량적 선발이 이루어집니다.'
+      susie: '수시모집 (약 78%): 고교 3년 내신 성적, 학교생활기록부, 면접·논술 등을 종합 평가합니다.',
+      jeongsi: '정시모집 (약 22%): 수능 표준점수와 백분위를 중심으로 정량 선발합니다.'
     }
   },
 
