@@ -753,7 +753,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
 
-      // Search Suneung
+      // Search Suneung & TOPIK
       if (
         'suneung csat exam 수능 대학수학능력시험 test schedule 엿 listening flight'.includes(query)
       ) {
@@ -761,6 +761,16 @@ document.addEventListener('DOMContentLoaded', () => {
           type: isKo ? '시험 및 입시' : 'Examinations',
           title: isKo ? '대학수학능력시험 (수능) & 내신' : 'Suneung (CSAT) & National Test Day',
           target: 'examinations'
+        });
+      }
+
+      if (
+        'topik topic 한국어능력시험 korean language proficiency niied levels'.includes(query)
+      ) {
+        results.push({
+          type: isKo ? '시험 및 입시' : 'Examinations',
+          title: isKo ? 'TOPIK (한국어능력시험) I·II 6등급 안내' : 'TOPIK (한국어능력시험) — Levels 1–6 Guide',
+          target: 'topik'
         });
       }
 
@@ -839,6 +849,7 @@ document.addEventListener('DOMContentLoaded', () => {
     'education-structure': 'structure.html',
     'school-life': 'school-life.html',
     'examinations': 'examinations.html',
+    'topik': 'examinations.html#topik',
     'comparison': 'comparison.html',
     'facts': 'facts.html',
     'quiz': 'quiz.html',
