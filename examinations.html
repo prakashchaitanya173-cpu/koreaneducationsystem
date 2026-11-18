@@ -134,8 +134,8 @@
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       
-      <!-- Suneung Photo & National Support Measures -->
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center mb-16">
+      <!-- Suneung Photo & National Context Intro -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center mb-10">
         <div class="lg:col-span-5 rounded-2xl overflow-hidden border border-white/20 shadow-2xl">
           <img 
             src="assets/images/suneung_exam.jpg" 
@@ -144,21 +144,38 @@
           />
         </div>
         <div class="lg:col-span-7 space-y-4">
-          <h2 class="text-2xl sm:text-3xl font-black text-rose-300">
+          <span class="text-xs font-bold uppercase tracking-wider text-rose-300 px-3 py-1 rounded-full bg-rose-950/60 border border-rose-400/30 inline-block">
+            National Mobilization • 전 국민 응원
+          </span>
+          <h2 class="text-2xl sm:text-3xl font-black text-white">
             <span data-en="When an Entire Nation Pauses for Students" data-ko="수능 날, 온 나라가 수험생을 위해 멈추는 이유">
               When an Entire Nation Pauses for Students
             </span>
           </h2>
           <p class="text-slate-200 text-sm leading-relaxed">
-            <span data-en="The Suneung test day is a rare cultural phenomenon. To guarantee zero noise during the 35-minute English listening comprehension exam, commercial flights across Korea cannot take off or land. Government offices delay opening to clear highway congestion, and police escort delayed students to test sites." data-ko="수능 시험 당일은 한국의 독특한 배려 문화가 빛나는 날입니다. 오후 영어 듣기평가 시간(35분간)에는 전국 모든 공항의 항공기 이착륙이 전면 중단되며, 출근 시간 1시간 연기와 경찰 싸이카 비상 수송 작전이 펼쳐집니다.">
-              The Suneung test day is a rare cultural phenomenon. To guarantee zero noise during the 35-minute English listening comprehension exam, commercial flights across Korea cannot take off or land. Government offices delay opening to clear highway congestion, and police escort delayed students to test sites.
+            <span data-en="The Suneung test day is a rare global phenomenon. Over 500,000 candidates enter more than 1,200 heavily guarded exam venues simultaneously at 08:10 AM. To guarantee absolute silence during the 35-minute afternoon English listening exam, commercial flights across South Korea are grounded, military drills cease, stock exchanges open an hour late, and police motorcycles escort delayed students to test gates." data-ko="수능 시험 당일은 전 세계에서도 유례를 찾기 힘든 국가적 배려의 날입니다. 50만 명 이상의 수험생이 전국 1,200여 개 시험장에 오전 8시 10분까지 입실하며, 영어 듣기평가 35분간 전국 항공기 이착륙 전면 통제, 주식시장 개장 1시간 연기, 경찰 싸이카 비상 수송이 펼쳐집니다.">
+              The Suneung test day is a rare global phenomenon. Over 500,000 candidates enter more than 1,200 heavily guarded exam venues simultaneously at 08:10 AM. To guarantee absolute silence during the 35-minute afternoon English listening exam, commercial flights across South Korea are grounded, military drills cease, stock exchanges open an hour late, and police motorcycles escort delayed students to test gates.
             </span>
           </p>
-
-          <!-- Grid of 4 National Measures (Rendered by app.js) -->
-          <div id="suneung-measures" class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2"></div>
+          <div class="grid grid-cols-3 gap-3 pt-2 text-center">
+            <div class="p-3 rounded-xl bg-white/10 border border-white/15">
+              <div class="text-xl font-black text-rose-300">~500K</div>
+              <div class="text-[11px] text-slate-300 mt-0.5">Annual Candidates</div>
+            </div>
+            <div class="p-3 rounded-xl bg-white/10 border border-white/15">
+              <div class="text-xl font-black text-amber-300">8+ Hrs</div>
+              <div class="text-[11px] text-slate-300 mt-0.5">One-Day Marathon</div>
+            </div>
+            <div class="p-3 rounded-xl bg-white/10 border border-white/15">
+              <div class="text-xl font-black text-sky-300">35 Min</div>
+              <div class="text-[11px] text-slate-300 mt-0.5">Nationwide No-Fly</div>
+            </div>
+          </div>
         </div>
       </div>
+
+      <!-- Grid of 6 National Measures (Rendered by app.js) -->
+      <div id="suneung-measures" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-12"></div>
 
       <!-- Suneung Marathon Timetable (8:40 to 17:45) -->
       <div class="bg-white/95 text-slate-800 rounded-2xl p-6 sm:p-8 shadow-2xl border border-white/20 mb-12">
@@ -192,38 +209,152 @@
         </div>
       </div>
 
+      <!-- Scoring Mechanics: 9-Grade Bell Curve & Score Types -->
+      <div class="bg-white/95 text-slate-800 rounded-2xl p-6 sm:p-8 shadow-2xl border border-white/20 mb-12">
+        <span class="text-xs font-extrabold uppercase tracking-wider text-[#0F2B5C] bg-blue-50 px-2.5 py-1 rounded border border-blue-200 inline-block">
+          Scoring &amp; Grading Architecture
+        </span>
+        <h3 class="text-xl sm:text-2xl font-extrabold text-[#0F2B5C] mt-2 mb-2">
+          The 9-Grade Bell Curve (9등급제) &amp; Suneung Scorecard Explained
+        </h3>
+        <p class="text-xs sm:text-sm text-slate-600 mb-6 leading-relaxed">
+          Official Suneung scorecards released every December report three distinct metrics rather than raw scores—adjusting mathematically for exam difficulty across subjects:
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6 text-xs">
+          <div class="p-4 rounded-xl bg-blue-50/70 border border-blue-200">
+            <h4 class="font-extrabold text-[#0F2B5C] text-sm mb-1">1. Standard Score (표준점수)</h4>
+            <p class="text-slate-600 leading-relaxed">Measures how far a student scored above the national mean. In a harder "Fire Suneung" (불수능), top standard scores surge past 145–150, giving high scorers extra leverage at elite universities.</p>
+          </div>
+          <div class="p-4 rounded-xl bg-rose-50/70 border border-rose-200">
+            <h4 class="font-extrabold text-[#D82B38] text-sm mb-1">2. Percentile (백분위)</h4>
+            <p class="text-slate-600 leading-relaxed">Shows the exact percentage of nationwide test-takers who scored below you (0–100). Earning a 99th percentile in Math means outperforming 99% of ~500,000 candidates.</p>
+          </div>
+          <div class="p-4 rounded-xl bg-emerald-50/70 border border-emerald-200">
+            <h4 class="font-extrabold text-emerald-800 text-sm mb-1">3. Relative vs. Absolute Grade (등급)</h4>
+            <p class="text-slate-600 leading-relaxed">Korean, Math, and Inquiry use the strict 9-tier relative bell curve below, whereas <strong>English (≥90 = Grade 1)</strong> and <strong>Korean History (≥40/50 = Grade 1)</strong> use absolute grading to lower stress.</p>
+          </div>
+        </div>
+
+        <div class="overflow-x-auto">
+          <table class="w-full text-center text-xs min-w-[600px] border border-slate-200 rounded-xl overflow-hidden">
+            <thead class="bg-[#0F2B5C] text-white font-bold">
+              <tr>
+                <th class="py-2.5 px-3">Grade Tier</th>
+                <th class="py-2.5 px-2">Grade 1</th>
+                <th class="py-2.5 px-2">Grade 2</th>
+                <th class="py-2.5 px-2">Grade 3</th>
+                <th class="py-2.5 px-2">Grade 4</th>
+                <th class="py-2.5 px-2">Grade 5</th>
+                <th class="py-2.5 px-2">Grade 6</th>
+                <th class="py-2.5 px-2">Grade 7</th>
+                <th class="py-2.5 px-2">Grade 8</th>
+                <th class="py-2.5 px-2">Grade 9</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-200 text-slate-700">
+              <tr class="bg-slate-50 font-semibold">
+                <td class="py-2.5 px-3 font-bold text-[#0F2B5C]">Cohort Share</td>
+                <td class="text-[#D82B38] font-black">4%</td>
+                <td>7%</td>
+                <td>12%</td>
+                <td>17%</td>
+                <td>20%</td>
+                <td>17%</td>
+                <td>12%</td>
+                <td>7%</td>
+                <td>4%</td>
+              </tr>
+              <tr>
+                <td class="py-2.5 px-3 font-bold text-slate-600">Cumulative Top %</td>
+                <td class="text-[#D82B38] font-bold">Top 4%</td>
+                <td>11%</td>
+                <td>23%</td>
+                <td>40%</td>
+                <td>60%</td>
+                <td>77%</td>
+                <td>89%</td>
+                <td>96%</td>
+                <td>100%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Year-Long Exam Ecosystem & Policy Reforms -->
+      <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 sm:p-8 border border-white/15 mb-12">
+        <span class="text-xs font-bold uppercase tracking-wider text-sky-300 px-3 py-1 rounded-full bg-sky-950/60 border border-sky-400/30 inline-block">
+          Beyond Test Day
+        </span>
+        <h3 class="text-2xl font-black text-white mt-3 mb-2">
+          The Year-Long Exam Ecosystem, Re-Takers &amp; Recent Reforms
+        </h3>
+        <p class="text-slate-300 text-xs sm:text-sm mb-6 leading-relaxed">
+          Preparing for university admission is a multi-year journey combining school records, national practice tests, and ongoing government reforms:
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+          <div class="p-5 rounded-xl bg-white/5 border border-white/15 space-y-1.5">
+            <h4 class="font-bold text-rose-300 text-sm">June &amp; September KICE Mock Exams (6·9월 모의평가)</h4>
+            <p class="text-slate-200 leading-relaxed">Written by the exact same KICE agency that writes the real Suneung, these two dress-rehearsal exams include both high school seniors and gap-year re-takers—providing the most accurate forecast of November difficulty and Susie strategy.</p>
+          </div>
+          <div class="p-5 rounded-xl bg-white/5 border border-white/15 space-y-1.5">
+            <h4 class="font-bold text-amber-300 text-sm">The Re-Taker Phenomenon (재수생 / N-수생)</h4>
+            <p class="text-slate-200 leading-relaxed">Roughly <strong>30% of all Suneung candidates</strong> each year are high school graduates or current college students retaking the exam (often studying full-time at residential boarding academies called 기숙학원) to aim for SKY universities or medical schools.</p>
+          </div>
+          <div class="p-5 rounded-xl bg-white/5 border border-white/15 space-y-1.5">
+            <h4 class="font-bold text-emerald-300 text-sm">Ban on "Killer Questions" (킬러문항 배제)</h4>
+            <p class="text-slate-200 leading-relaxed">Starting in 2023, the Ministry of Education removed ultra-obscure "killer questions" that fell outside the public high school curriculum and could only be solved via costly private cram schools—restoring fairness to public school and EBS preparation.</p>
+          </div>
+          <div class="p-5 rounded-xl bg-white/5 border border-white/15 space-y-1.5">
+            <h4 class="font-bold text-sky-300 text-sm">2028 Unified Suneung &amp; 5-Tier Naeshin Reform</h4>
+            <p class="text-slate-200 leading-relaxed">To align with the High School Credit System, Korea is simplifying high school Naeshin from 9 tiers to 5 tiers (Top 10% = Grade 1) and transitioning the 2028 Suneung so all students take unified Integrated Social Studies and Integrated Science without elective scoring bias.</p>
+          </div>
+        </div>
+      </div>
+
       <!-- Suneung Cultural Superstitions & Good Luck Gifts -->
       <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 sm:p-8 border border-white/15 mb-16">
         <span class="text-xs font-bold uppercase tracking-wider text-amber-300 px-3 py-1 rounded-full bg-amber-900/40 border border-amber-500/30">
           Cultural Traditions
         </span>
         <h3 class="text-2xl font-black text-white mt-3 mb-2">
-          Suneung Good-Luck Gifts &amp; Superstitions (수능 찹쌀떡과 엿)
+          Suneung Good-Luck Gifts, Superstitions &amp; Weather Lore
         </h3>
         <p class="text-slate-300 text-xs sm:text-sm mb-6 leading-relaxed">
-          In Korea, the word "to stick" (붙다) is a pun for "passing an exam". Families and junior students give distinct gifts filled with symbolic wordplay:
+          In Korean, the verb "to stick" (붙다) also means "to pass an entrance exam". Families, friends, and junior students exchange gifts packed with clever linguistic wordplay:
         </p>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 text-xs">
           <div class="p-4 rounded-xl bg-white/5 border border-white/10">
             <span class="text-2xl block mb-1">🍬</span>
-            <h4 class="font-bold text-white text-sm">Yeot (엿) &amp; Rice Cakes</h4>
-            <p class="text-slate-300 mt-1">Sticky traditional taffy and chapssaltteok so exam success "sticks" to the student.</p>
+            <h4 class="font-bold text-white text-sm">Yeot (엿) &amp; Sticky Rice Cakes</h4>
+            <p class="text-slate-300 mt-1 leading-relaxed">Sticky traditional malt taffy and chapssaltteok (찹쌀떡) are gifted so admission success "sticks" firmly to the student.</p>
           </div>
           <div class="p-4 rounded-xl bg-white/5 border border-white/10">
             <span class="text-2xl block mb-1">🍴</span>
-            <h4 class="font-bold text-white text-sm">Forks &amp; Axes</h4>
-            <p class="text-slate-300 mt-1">Gifts shaped like forks or toy axes to help students "pick" (찍다) or "hack" the right answers.</p>
+            <h4 class="font-bold text-white text-sm">Forks &amp; Mini Axes</h4>
+            <p class="text-slate-300 mt-1 leading-relaxed">Symbolic forks and toy axes encourage students to accurately "stab/pick" (찍다) the right multiple-choice answers when guessing.</p>
           </div>
           <div class="p-4 rounded-xl bg-white/5 border border-white/10">
             <span class="text-2xl block mb-1">🧻</span>
             <h4 class="font-bold text-white text-sm">Roll of Toilet Paper</h4>
-            <p class="text-slate-300 mt-1">Symbolizes "unrolling smoothly" (잘 풀리다) so exam questions unravel with ease.</p>
+            <p class="text-slate-300 mt-1 leading-relaxed">Symbolizes "unrolling smoothly" (잘 풀리다), wishing that dense math and reading problems unravel effortlessly.</p>
+          </div>
+          <div class="p-4 rounded-xl bg-white/5 border border-white/10">
+            <span class="text-2xl block mb-1">🪞</span>
+            <h4 class="font-bold text-white text-sm">Hand Mirrors (거울)</h4>
+            <p class="text-slate-300 mt-1 leading-relaxed">Plays on the phrase "see well" (시험을 잘 보다)—wishing candidates sharp clarity to spot tricky distractors on test day.</p>
+          </div>
+          <div class="p-4 rounded-xl bg-white/5 border border-white/10">
+            <span class="text-2xl block mb-1">❄️</span>
+            <h4 class="font-bold text-sky-300 text-sm">The "Suneung Cold Wave" (수능 한파)</h4>
+            <p class="text-slate-300 mt-1 leading-relaxed">Mid-November temperatures famously plunge right on Suneung morning; students bring layered coats, lap blankets, and hot packs (핫팩) into silent classrooms.</p>
           </div>
           <div class="p-4 rounded-xl bg-white/5 border border-white/10">
             <span class="text-2xl block mb-1">🚫🍲</span>
-            <h4 class="font-bold text-rose-300 text-sm">Taboo: Seaweed Soup</h4>
-            <p class="text-slate-300 mt-1">Never eat slippery seaweed soup (미역국) on test morning, as you might "slip and fall" (미끄러지다).</p>
+            <h4 class="font-bold text-rose-300 text-sm">Taboo: Seaweed Soup (미역국)</h4>
+            <p class="text-slate-300 mt-1 leading-relaxed">Never eat slippery seaweed soup—or wash your hair too vigorously—on exam morning, for fear of "slipping" (미끄러지다 = failing) or washing away knowledge!</p>
           </div>
         </div>
       </div>
@@ -272,7 +403,7 @@
     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
   </button>
 
-  <script src="assets/js/data.js"></script>
-  <script src="assets/js/app.js?v=4"></script>
+  <script src="assets/js/data.js?v=5"></script>
+  <script src="assets/js/app.js?v=5"></script>
 </body>
 </html>

@@ -236,9 +236,9 @@ document.addEventListener('DOMContentLoaded', () => {
               : 'bg-white text-slate-700 border-slate-200 hover:border-slate-300 hover:bg-slate-50'
           }"
         >
-          <div class="flex items-center justify-between">
-            <span class="text-xs font-semibold uppercase tracking-wider ${isActive ? 'text-red-300' : 'text-slate-400'}">${stage.durationEn}</span>
-            <span class="text-xs px-2 py-0.5 rounded-full ${isActive ? 'bg-white/20 text-white' : 'bg-slate-100 text-slate-600'}">${stage.koreanTerm}</span>
+          <div class="flex items-center justify-between gap-2">
+            <span class="text-xs font-semibold uppercase tracking-wider truncate ${isActive ? 'text-red-300' : 'text-slate-400'}">${(currentLang === 'ko' ? stage.durationKo : stage.durationEn).split('|')[0].trim()}</span>
+            <span class="text-xs px-2 py-0.5 rounded-full shrink-0 whitespace-nowrap ${isActive ? 'bg-white/20 text-white' : 'bg-slate-100 text-slate-600'}">${stage.koreanTerm}</span>
           </div>
           <div class="font-bold text-base mt-1">${title}</div>
           <div class="text-xs mt-0.5 ${isActive ? 'text-blue-200' : 'text-slate-500'}">${age}</div>
@@ -321,18 +321,44 @@ document.addEventListener('DOMContentLoaded', () => {
               </ul>
             </div>
 
-            <div class="bg-slate-50 rounded-xl p-5 border border-slate-200/80 flex flex-col justify-between">
-              <div>
-                <h4 class="text-xs font-bold uppercase tracking-wider text-slate-700 mb-2 flex items-center gap-2">
-                  <svg class="w-4 h-4 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                  ${isKo ? '표준 일과 시간' : 'Typical Daily Schedule'}
-                </h4>
-                <p class="text-sm font-semibold text-slate-800">
-                  ${isKo ? current.dailyRoutineKo : current.dailyRoutineEn}
-                </p>
-              </div>
-              <div class="mt-4 pt-3 border-t border-slate-200 text-xs text-slate-500">
-                ${isKo ? '※ 방과후 프로그램 및 방학 중 돌봄교실 지원' : '※ Includes government after-school care and enrichment options.'}
+            <div class="space-y-4">
+              ${current.subjectsEn ? `
+                <div class="bg-blue-50/70 rounded-xl p-5 border border-blue-200/80">
+                  <h4 class="text-xs font-bold uppercase tracking-wider text-[#0F2B5C] mb-1.5 flex items-center gap-2">
+                    <svg class="w-4 h-4 text-[#0F2B5C]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                    ${isKo ? '핵심 교과 및 커리큘럼' : 'Core Subjects & Curriculum'}
+                  </h4>
+                  <p class="text-xs sm:text-sm text-slate-700 leading-relaxed">
+                    ${isKo ? current.subjectsKo : current.subjectsEn}
+                  </p>
+                </div>
+              ` : ''}
+
+              ${current.assessmentEn ? `
+                <div class="bg-rose-50/60 rounded-xl p-5 border border-rose-200/80">
+                  <h4 class="text-xs font-bold uppercase tracking-wider text-[#D82B38] mb-1.5 flex items-center gap-2">
+                    <svg class="w-4 h-4 text-[#D82B38]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    ${isKo ? '평가 및 진급·진학 방식' : 'Assessment & Progression'}
+                  </h4>
+                  <p class="text-xs sm:text-sm text-slate-700 leading-relaxed">
+                    ${isKo ? current.assessmentKo : current.assessmentEn}
+                  </p>
+                </div>
+              ` : ''}
+
+              <div class="bg-slate-50 rounded-xl p-5 border border-slate-200/80 flex flex-col justify-between">
+                <div>
+                  <h4 class="text-xs font-bold uppercase tracking-wider text-slate-700 mb-2 flex items-center gap-2">
+                    <svg class="w-4 h-4 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    ${isKo ? '표준 일과 시간' : 'Typical Daily Schedule'}
+                  </h4>
+                  <p class="text-sm font-semibold text-slate-800">
+                    ${isKo ? current.dailyRoutineKo : current.dailyRoutineEn}
+                  </p>
+                </div>
+                <div class="mt-3 pt-3 border-t border-slate-200 text-xs text-slate-500">
+                  ${isKo ? '※ 방과후 프로그램 및 방학 중 돌봄교실 지원' : '※ Includes government after-school care and enrichment options.'}
+                </div>
               </div>
             </div>
           </div>
@@ -412,22 +438,29 @@ document.addEventListener('DOMContentLoaded', () => {
       timetableContainer.innerHTML = s.schedule.map((item, idx) => {
         const isListening = idx === 3;
         return `
-          <div class="p-4 rounded-xl border ${isListening ? 'bg-rose-50/80 border-rose-300' : 'bg-white border-slate-200'} flex flex-col md:flex-row md:items-center justify-between gap-3">
-            <div class="flex items-center gap-3">
-              <span class="px-2.5 py-1 rounded-md text-xs font-extrabold ${isListening ? 'bg-rose-600 text-white' : 'bg-[#0F2B5C] text-white'}">
-                ${item.period}
-              </span>
-              <div>
-                <h5 class="font-bold text-slate-900 text-sm">
-                  ${isKo ? item.subjectKo : item.subjectEn}
-                </h5>
-                <p class="text-xs text-slate-500">${item.time}</p>
+          <div class="p-4 sm:p-5 rounded-xl border ${isListening ? 'bg-rose-50/80 border-rose-300' : 'bg-white border-slate-200'} space-y-2.5">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-3">
+              <div class="flex items-center gap-3">
+                <span class="px-2.5 py-1 rounded-md text-xs font-extrabold shrink-0 ${isListening ? 'bg-rose-600 text-white' : 'bg-[#0F2B5C] text-white'}">
+                  ${item.period}
+                </span>
+                <div>
+                  <h5 class="font-bold text-slate-900 text-sm sm:text-base">
+                    ${isKo ? item.subjectKo : item.subjectEn}
+                  </h5>
+                  <p class="text-xs text-slate-500">${item.time}</p>
+                </div>
+              </div>
+              <div class="flex flex-wrap items-center gap-2">
+                ${isListening ? `<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-rose-100 text-rose-800"><svg class="w-3 h-3 text-rose-600" fill="currentColor" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zM8 7a1 1 0 00-1 1v4a1 1 0 001 1h4a1 1 0 001-1V8a1 1 0 00-1-1H8z"></path></svg>${isKo ? '항공기 통제 시간' : 'No-Fly Period'}</span>` : ''}
+                <span class="text-xs font-medium text-slate-700 bg-slate-100 px-3 py-1 rounded-lg">${item.qCount}</span>
               </div>
             </div>
-            <div class="flex items-center gap-3">
-              ${isListening ? `<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-rose-100 text-rose-800"><svg class="w-3 h-3 text-rose-600" fill="currentColor" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zM8 7a1 1 0 00-1 1v4a1 1 0 001 1h4a1 1 0 001-1V8a1 1 0 00-1-1H8z"></path></svg>${isKo ? '항공기 통제 시간' : 'No-Fly Period'}</span>` : ''}
-              <span class="text-xs font-medium text-slate-600 bg-slate-100 px-3 py-1 rounded-lg">${item.qCount}</span>
-            </div>
+            ${item.descEn ? `
+              <p class="text-xs text-slate-600 leading-relaxed pt-1 border-t ${isListening ? 'border-rose-200/80' : 'border-slate-100'}">
+                ${isKo ? item.descKo : item.descEn}
+              </p>
+            ` : ''}
           </div>
         `;
       }).join('');
@@ -747,13 +780,28 @@ document.addEventListener('DOMContentLoaded', () => {
       });
 
       // Search Comparison
-      if ('india compare difference calendar board cbse jee neet vs'.includes(query)) {
+      if ('india compare difference calendar board cbse jee neet vs nep teacher rotation'.includes(query)) {
         results.push({
           type: isKo ? '한-인 교육 비교' : 'Comparison',
           title: isKo ? '한국 vs 인도 교육 체계 비교' : 'Korean Education vs Indian Education',
           target: 'comparison'
         });
       }
+
+      // Search Facts & Innovations
+      data.interestingFacts.forEach(fact => {
+        if (
+          fact.titleEn.toLowerCase().includes(query) ||
+          fact.titleKo.toLowerCase().includes(query) ||
+          fact.descEn.toLowerCase().includes(query)
+        ) {
+          results.push({
+            type: isKo ? '주요 사실' : 'Facts',
+            title: isKo ? fact.titleKo : fact.titleEn,
+            target: 'facts'
+          });
+        }
+      });
 
       // Render Dropdown
       if (results.length === 0) {
@@ -961,6 +1009,14 @@ document.addEventListener('DOMContentLoaded', () => {
         return '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>';
       case 'flame':
         return '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"></path></svg>';
+      case 'utensils':
+        return '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 3v7a2 2 0 002 2h1v9m4-18v7a2 2 0 01-2 2M15 3v18m0-18c2.2 0 4 2.2 4 5v4h-4"></path></svg>';
+      case 'lock':
+        return '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>';
+      case 'tv':
+        return '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>';
+      case 'wrench':
+        return '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>';
       default:
         return '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>';
     }
